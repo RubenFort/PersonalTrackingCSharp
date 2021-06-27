@@ -1,0 +1,15 @@
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\PersonalTracking.exe.config
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\PersonalTracking.exe
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\PersonalTracking.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\BLL.dll
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\DAL.dll
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\BLL.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\DAL.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csprojAssemblyReference.cache
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmLogin.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.Properties.Resources.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csproj.GenerateResource.cache
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csproj.CoreCompileInputs.cache
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csproj.CopyComplete
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.exe
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.pdb

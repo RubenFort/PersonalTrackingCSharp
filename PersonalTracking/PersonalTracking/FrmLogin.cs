@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //propiedad que indica que se ha controlado o no el evento
+            e.Handled = General.isNumber(e);
         }
     }
 }
