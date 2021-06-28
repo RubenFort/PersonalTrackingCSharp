@@ -27,5 +27,12 @@ namespace PersonalTracking
         {
             Application.Exit();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmMain frm = new FrmMain();
+            this.Hide();//Esconde el formulario actual
+            frm.ShowDialog();//Muestra el formulario
+        }
     }
 }
