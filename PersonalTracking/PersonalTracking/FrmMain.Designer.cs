@@ -163,6 +163,7 @@
             this.Controls.Add(this.btnTasks);
             this.Controls.Add(this.btnEmployee);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Tracking";
             this.ResumeLayout(false);
 
