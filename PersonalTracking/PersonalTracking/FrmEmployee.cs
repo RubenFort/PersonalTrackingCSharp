@@ -59,9 +59,16 @@ namespace PersonalTracking
             {
                 int departmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
                 cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == departmentID).ToList();
-                MessageBox.Show("kk");
             }
-            
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Load(openFileDialog1.FileName);
+                txtImagePath.Text = openFileDialog1.FileName;
+            }
         }
     }
 }

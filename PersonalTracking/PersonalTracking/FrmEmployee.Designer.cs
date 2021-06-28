@@ -39,7 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPath = new System.Windows.Forms.TextBox();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -168,13 +168,13 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Surname";
             // 
-            // txtPath
+            // txtImagePath
             // 
-            this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(139, 217);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(207, 26);
-            this.txtPath.TabIndex = 2;
+            this.txtImagePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImagePath.Location = new System.Drawing.Point(139, 217);
+            this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.Size = new System.Drawing.Size(207, 26);
+            this.txtImagePath.TabIndex = 2;
             // 
             // label4
             // 
@@ -199,6 +199,7 @@
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtSalary
             // 
@@ -318,7 +319,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(609, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(609, 133);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 193);
             this.pictureBox1.TabIndex = 22;
@@ -343,7 +344,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtPath);
+            this.Controls.Add(this.txtImagePath);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.label3);
@@ -375,7 +376,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.TextBox txtImagePath;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
