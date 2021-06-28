@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textUserNo = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.chAdmin = new System.Windows.Forms.CheckBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chAdmin = new System.Windows.Forms.CheckBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.textUserNo = new System.Windows.Forms.TextBox();
+            this.txtUserNo = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -74,34 +74,16 @@
             this.panel1.Size = new System.Drawing.Size(856, 100);
             this.panel1.TabIndex = 0;
             // 
-            // textUserNo
+            // chAdmin
             // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(113, 12);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.Size = new System.Drawing.Size(171, 26);
-            this.textUserNo.TabIndex = 0;
-            this.textUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
-            // 
-            // txtUserNo
-            // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(14, 15);
-            this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 11;
-            this.txtUserNo.Text = "UserNo";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(303, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(108, 26);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Check";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.chAdmin.AutoSize = true;
+            this.chAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chAdmin.Location = new System.Drawing.Point(722, 14);
+            this.chAdmin.Name = "chAdmin";
+            this.chAdmin.Size = new System.Drawing.Size(106, 24);
+            this.chAdmin.TabIndex = 15;
+            this.chAdmin.Text = "is Admin?";
+            this.chAdmin.UseVisualStyleBackColor = true;
             // 
             // textPassword
             // 
@@ -121,16 +103,34 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Password";
             // 
-            // chAdmin
+            // btnExit
             // 
-            this.chAdmin.AutoSize = true;
-            this.chAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chAdmin.Location = new System.Drawing.Point(722, 14);
-            this.chAdmin.Name = "chAdmin";
-            this.chAdmin.Size = new System.Drawing.Size(106, 24);
-            this.chAdmin.TabIndex = 15;
-            this.chAdmin.Text = "is Admin?";
-            this.chAdmin.UseVisualStyleBackColor = true;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(303, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(108, 26);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Check";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // textUserNo
+            // 
+            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUserNo.Location = new System.Drawing.Point(113, 12);
+            this.textUserNo.Name = "textUserNo";
+            this.textUserNo.Size = new System.Drawing.Size(171, 26);
+            this.textUserNo.TabIndex = 0;
+            this.textUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
+            // 
+            // txtUserNo
+            // 
+            this.txtUserNo.AutoSize = true;
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(14, 15);
+            this.txtUserNo.Name = "txtUserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
+            this.txtUserNo.TabIndex = 11;
+            this.txtUserNo.Text = "UserNo";
             // 
             // txtName
             // 
@@ -352,6 +352,7 @@
             this.Name = "FrmEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.FrmEmployee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
