@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL;
 
 namespace PersonalTracking
 {
@@ -28,6 +30,8 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            list = DepartmentBLL.GetDepartments();
+            dataGridDepartment.DataSource = list;//Muestra los nuevos resultados al volver de FrmDepartment
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -36,6 +40,22 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+        }
+
+        List<DEPARTMENT> list = new List<DEPARTMENT>();
+
+        /// <summary>
+        /// Mostrar listado de departamentos en una tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmDepartmentList_Load(object sender, EventArgs e)
+        {
+            list = DepartmentBLL.GetDepartments();
+            dataGridDepartment.DataSource = list;//Mostrar datos
+            //dataGridDepartment.Columns[0].Visible = false;//Oculta columna 0
+            dataGridDepartment.Columns[0].HeaderText = "Department ID";//Al mostrar cambiar nombre columna 
+            dataGridDepartment.Columns[1].HeaderText = "Department Name";
         }
     }
 }
