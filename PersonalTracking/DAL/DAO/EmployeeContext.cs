@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAO
 {
-    class EmployeeContext
+    public class EmployeeContext
     {
         public static EmployeeDataClassDataContext db = new EmployeeDataClassDataContext();
     }

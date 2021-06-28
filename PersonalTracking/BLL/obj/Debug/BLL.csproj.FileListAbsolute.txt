@@ -7,3 +7,4 @@ C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\BLL\obj\Debug
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\BLL\obj\Debug\BLL.dll
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\BLL\obj\Debug\BLL.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\BLL\bin\Debug\DAL.dll.config

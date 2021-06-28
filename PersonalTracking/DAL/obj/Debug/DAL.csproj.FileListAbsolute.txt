@@ -4,3 +4,4 @@ C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\DAL\obj\Debug
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\DAL\obj\Debug\DAL.dll
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\DAL\obj\Debug\DAL.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\DAL\bin\Debug\DAL.dll.config
