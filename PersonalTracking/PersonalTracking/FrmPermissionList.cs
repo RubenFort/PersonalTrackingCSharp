@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class FrmEmployee : Form
+    public partial class FrmPermissionList : Form
     {
-        public FrmEmployee()
+        public FrmPermissionList()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void textUserNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -27,9 +22,14 @@ namespace PersonalTracking
             e.Handled = General.isNumber(e);
         }
 
-        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDayAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = General.isNumber(e);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
