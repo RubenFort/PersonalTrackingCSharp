@@ -37,6 +37,7 @@ namespace PersonalTracking
 
         EmployeeDTO dto = new EmployeeDTO();
 
+        //Recojer valores de Departments y Positions de la BD y mostrarlos en los ComboBox del formulario
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
             dto = EmployeeBLL.GetAll();//OJO
@@ -48,6 +49,19 @@ namespace PersonalTracking
             cmbPosition.ValueMember = "ID";
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+        }
+        bool comboFull = false;
+        //Mostrar los puestos de trabajo asociados a un departmento en concreto
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFull)
+            {
+                int departmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == departmentID).ToList();
+                MessageBox.Show("kk");
+            }
+            
         }
     }
 }
