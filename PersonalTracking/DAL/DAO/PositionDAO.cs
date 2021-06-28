@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.DTO;
 
 namespace DAL.DAO
 {
@@ -14,6 +15,38 @@ namespace DAL.DAO
             {
                 db.POSITION.InsertOnSubmit(position);
                 db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static List<PositionDTO> GetPositions()
+        {
+            try
+            {
+                var list = (from p in db.POSITION
+                            join d in db.DEPARTMENT on p.DepartmentID equals d.ID
+                            select new
+                            {
+                                positionID = p.ID,
+                                positionName = p.PositionName,
+                                departmentName = d.DepartmentName,
+                                departmentID = p.DepartmentID
+                            }).OrderBy(x => x.positionID).ToList();
+                List<PositionDTO> positionList = new List<PositionDTO>();
+                foreach (var item in list)
+                {
+                    PositionDTO dto = new PositionDTO();
+                    dto.ID = item.positionID;
+                    dto.PositionName = item.positionName;
+                    dto.DepartmentNane = item.departmentName;
+                    dto.DepartmentID = item.departmentID;
+                    positionList.Add(dto);
+                }
+                return positionList;
             }
             catch (Exception)
             {
