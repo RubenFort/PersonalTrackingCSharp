@@ -18,6 +18,7 @@ namespace DAL.DTO
         public int positionID { get; set; }
         public int salary { get; set; }
         public bool isAdmin { get; set; }
+        public string password { get; set; }
         public string imagePath { get; set; }
         public string adress { get; set; }
         public DateTime? birthDay { get; set; }
