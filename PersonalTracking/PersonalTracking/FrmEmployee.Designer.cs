@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.chAdmin = new System.Windows.Forms.CheckBox();
-            this.textPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.textUserNo = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.chAdmin);
-            this.panel1.Controls.Add(this.textPassword);
+            this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.textUserNo);
@@ -85,13 +85,13 @@
             this.chAdmin.Text = "is Admin?";
             this.chAdmin.UseVisualStyleBackColor = true;
             // 
-            // textPassword
+            // txtPassword
             // 
-            this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPassword.Location = new System.Drawing.Point(528, 12);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(171, 26);
-            this.textPassword.TabIndex = 2;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(528, 12);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(171, 26);
+            this.txtPassword.TabIndex = 2;
             // 
             // label1
             // 
@@ -316,6 +316,7 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox1
             // 
@@ -370,7 +371,7 @@
         private System.Windows.Forms.Label txtUserNo;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chAdmin;
-        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;

@@ -62,6 +62,7 @@ namespace PersonalTracking
             }
         }
 
+        //Cargar Imagen
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -69,6 +70,13 @@ namespace PersonalTracking
                 pictureBox1.Load(openFileDialog1.FileName);
                 txtImagePath.Text = openFileDialog1.FileName;
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtUserNo.Text.Trim() == "")
+                MessageBox.Show("User no is Empty")
+            else if (txtpa)
         }
     }
 }
