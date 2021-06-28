@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace DAL.DAO
 {
-    public class EmployeeDAO:EmployeeContext
+    public class EmployeeDAO : EmployeeContext
     {
+        public static void AddEmployee(EMPLOYEE employee)
+        {
+            try
+            {
+                db.EMPLOYEE.InsertOnSubmit(employee);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

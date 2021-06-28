@@ -33,8 +33,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.textUserNo = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dtBirthday = new System.Windows.Forms.DateTimePicker();
-            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.txtAdress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -66,8 +66,8 @@
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.textUserNo);
             this.panel1.Controls.Add(this.txtUserNo);
+            this.panel1.Controls.Add(this.label);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -113,24 +113,24 @@
             this.btnExit.Text = "Check";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // textUserNo
-            // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(113, 12);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.Size = new System.Drawing.Size(171, 26);
-            this.textUserNo.TabIndex = 0;
-            this.textUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
-            // 
             // txtUserNo
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(14, 15);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(113, 12);
             this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 11;
-            this.txtUserNo.Text = "UserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(171, 26);
+            this.txtUserNo.TabIndex = 0;
+            this.txtUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(14, 15);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 11;
+            this.label.Text = "UserNo";
             // 
             // txtName
             // 
@@ -277,14 +277,14 @@
             this.dtBirthday.Size = new System.Drawing.Size(207, 26);
             this.dtBirthday.TabIndex = 7;
             // 
-            // txtNotes
+            // txtAdress
             // 
-            this.txtNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotes.Location = new System.Drawing.Point(139, 436);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(620, 140);
-            this.txtNotes.TabIndex = 8;
+            this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdress.Location = new System.Drawing.Point(139, 436);
+            this.txtAdress.Multiline = true;
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(620, 140);
+            this.txtAdress.TabIndex = 8;
             // 
             // label9
             // 
@@ -292,9 +292,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(23, 439);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 20);
+            this.label9.Size = new System.Drawing.Size(65, 20);
             this.label9.TabIndex = 33;
-            this.label9.Text = "Name";
+            this.label9.Text = "Adress";
             // 
             // btnClose
             // 
@@ -333,7 +333,7 @@
             this.ClientSize = new System.Drawing.Size(856, 683);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtNotes);
+            this.Controls.Add(this.txtAdress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtBirthday);
             this.Controls.Add(this.label8);
@@ -367,8 +367,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textUserNo;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chAdmin;
         private System.Windows.Forms.TextBox txtPassword;
@@ -390,7 +390,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtBirthday;
-        private System.Windows.Forms.TextBox txtNotes;
+        private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using DAL;
 using DAL.DTO;
+using System.IO;
 
 namespace PersonalTracking
 {
@@ -62,6 +63,7 @@ namespace PersonalTracking
             }
         }
 
+        string fileName = "";
         //Cargar Imagen
         private void btnBrowse_Click(object sender, EventArgs e)
         {
@@ -69,14 +71,68 @@ namespace PersonalTracking
             {
                 pictureBox1.Load(openFileDialog1.FileName);
                 txtImagePath.Text = openFileDialog1.FileName;
+                //GUID representa un identificador único global 
+                string unique = Guid.NewGuid().ToString();
+                fileName += unique + openFileDialog1.SafeFileName;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtUserNo.Text.Trim() == "")
-                MessageBox.Show("User no is Empty")
-            else if (txtpa)
+                MessageBox.Show("User no is Empty");
+            else if (txtPassword.Text.Trim() == "")
+                MessageBox.Show("Password is Empty");
+            else if (txtName.Text.Trim() == "")
+                MessageBox.Show("Name is Empty");
+            else if (txtSurname.Text.Trim() == "")
+                MessageBox.Show("Surname is Empty");
+            else if (txtSalary.Text.Trim() == "")
+                MessageBox.Show("Salary is Empty");
+            else if (cmbDepartment.SelectedIndex == -1)
+                MessageBox.Show("Select a Department");
+            else if (cmbPosition.SelectedIndex == -1)
+                MessageBox.Show("Select a Position");
+            else
+            {
+                EMPLOYEE employee = new EMPLOYEE();
+                //MessageBox.Show(label.Text);
+                employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                employee.Password = txtPassword.Text;
+                employee.isAdmin = chAdmin.Checked;
+                employee.Name = txtName.Text;
+                employee.SurName = txtSurname.Text;
+                employee.Salary = Convert.ToInt32(txtSalary.Text);
+                employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
+                employee.Adress = txtAdress.Text;
+                employee.BirthDay = dtBirthday.Value;
+                employee.ImagePath = fileName;
+                EmployeeBLL.AddEmployee(employee);
+                File.Copy(txtImagePath.Text, @"images\\" + fileName);//Copiar imagen a capeta(persistir datos)
+                MessageBox.Show("Employee was Added");
+                resertForm();
+                
+            }
+        }
+
+        private void resertForm()
+        {
+            txtUserNo.Clear();
+            txtPassword.Clear();
+            chAdmin.Checked = false;
+            txtName.Clear();
+            txtSurname.Clear();
+            txtSalary.Clear();
+            txtAdress.Clear();
+            txtImagePath.Clear();
+            pictureBox1.Image = null;
+            comboFull = false;
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.DataSource = dto.Positions;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+            dtBirthday.Value = DateTime.Today;
         }
     }
 }
