@@ -31,7 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -62,22 +62,22 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnNew);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 536);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(629, 84);
             this.panel1.TabIndex = 2;
             // 
-            // btnAdd
+            // btnNew
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(22, 19);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(120, 40);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(22, 19);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(120, 40);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -136,6 +136,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
     }
 }

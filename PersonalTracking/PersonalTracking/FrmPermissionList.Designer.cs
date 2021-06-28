@@ -34,7 +34,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnDisapprove = new System.Windows.Forms.Button();
             this.pnlForAdmin = new System.Windows.Forms.Panel();
@@ -86,7 +86,7 @@
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnNew);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 522);
             this.panel2.Name = "panel2";
@@ -133,15 +133,15 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnNew
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(365, 44);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(120, 40);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(365, 44);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(120, 40);
+            this.btnNew.TabIndex = 2;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
             // 
             // btnApprove
             // 
@@ -447,7 +447,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnlForAdmin;
         private System.Windows.Forms.ComboBox cmbPosition;
