@@ -81,6 +81,8 @@ namespace PersonalTracking
         {
             if (txtUserNo.Text.Trim() == "")
                 MessageBox.Show("User no is Empty");
+            else if (!EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
+                MessageBox.Show("This user No is used by another employee, please change");
             else if (txtPassword.Text.Trim() == "")
                 MessageBox.Show("Password is Empty");
             else if (txtName.Text.Trim() == "")
@@ -112,7 +114,6 @@ namespace PersonalTracking
                 File.Copy(txtImagePath.Text, @"images\\" + fileName);//Copiar imagen a capeta(persistir datos)
                 MessageBox.Show("Employee was Added");
                 resertForm();
-                
             }
         }
 
@@ -133,6 +134,21 @@ namespace PersonalTracking
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
             dtBirthday.Value = DateTime.Today;
+        }
+
+        bool isUnique = false;
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (txtUserNo.Text.Trim() == "")
+                MessageBox.Show("User no is Empty");
+            else
+            {
+                isUnique = EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text));
+                if (!isUnique)
+                    MessageBox.Show("This user No is used by another employee, please change");
+                else
+                    MessageBox.Show("This user is usable");
+            }
         }
     }
 }
