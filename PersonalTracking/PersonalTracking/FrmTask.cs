@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class txtNotes : Form
+    public partial class FrmTask : Form
     {
-        public txtNotes()
+        public FrmTask()
         {
             InitializeComponent();
         }
@@ -22,14 +22,9 @@ namespace PersonalTracking
             this.Close();
         }
 
-        private void textUserNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            e.Handled = General.isNumber(e);
-        }
 
-        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = General.isNumber(e);
         }
     }
 }

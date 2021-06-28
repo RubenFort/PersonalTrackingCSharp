@@ -15,3 +15,9 @@ C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTrack
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.pdb
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmMain.resources
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmDepartment.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmDepartmentList.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.txtNotes.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmEmployeeList.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmPosition.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmPositionList.resources
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmTaskList.resources
