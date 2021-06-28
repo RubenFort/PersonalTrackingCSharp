@@ -13,3 +13,4 @@ C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTrack
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csproj.CopyComplete
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.exe
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.pdb
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmMain.resources

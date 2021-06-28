@@ -52,11 +52,20 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +99,45 @@
       <Project>{2d5432c6-8f8d-47ff-9277-aabfb098d99f}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3592855-business-man-employee-general-human-member-office-tie_107745.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3592855-business-man-employee-general-human-member-office-tie_107745 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-task-comment-message-edit-write_108613.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_cash_payment_money_dollar_bill_icon_143267.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team_group_people_management_business_work_employees_icon_153126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Football_2-51_icon-icons.com_72068.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_person_business_teamwork_businessman_icon_175935.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_out_icon_176385.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disable_remove_delete_exit_close_11881.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick_check_mark_icon_153886.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
