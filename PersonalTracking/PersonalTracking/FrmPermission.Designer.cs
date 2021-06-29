@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textUserNo = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.dpStart = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDayAmount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtExplanation = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,24 +42,24 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textUserNo
-            // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(141, 26);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.ReadOnly = true;
-            this.textUserNo.Size = new System.Drawing.Size(221, 26);
-            this.textUserNo.TabIndex = 18;
-            // 
             // txtUserNo
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(27, 29);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(141, 26);
             this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 19;
-            this.txtUserNo.Text = "UserNo";
+            this.txtUserNo.ReadOnly = true;
+            this.txtUserNo.Size = new System.Drawing.Size(221, 26);
+            this.txtUserNo.TabIndex = 18;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(27, 29);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 19;
+            this.label.Text = "UserNo";
             // 
             // dpEnd
             // 
@@ -69,6 +69,7 @@
             this.dpEnd.Name = "dpEnd";
             this.dpEnd.Size = new System.Drawing.Size(221, 26);
             this.dpEnd.TabIndex = 1;
+            this.dpEnd.ValueChanged += new System.EventHandler(this.dpEnd_ValueChanged);
             // 
             // dpStart
             // 
@@ -78,6 +79,7 @@
             this.dpStart.Name = "dpStart";
             this.dpStart.Size = new System.Drawing.Size(221, 26);
             this.dpStart.TabIndex = 0;
+            this.dpStart.ValueChanged += new System.EventHandler(this.dpStart_ValueChanged);
             // 
             // label7
             // 
@@ -99,14 +101,14 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "Start";
             // 
-            // textBox1
+            // txtDayAmount
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(141, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(221, 26);
-            this.textBox1.TabIndex = 27;
+            this.txtDayAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDayAmount.Location = new System.Drawing.Point(141, 153);
+            this.txtDayAmount.Name = "txtDayAmount";
+            this.txtDayAmount.ReadOnly = true;
+            this.txtDayAmount.Size = new System.Drawing.Size(221, 26);
+            this.txtDayAmount.TabIndex = 27;
             // 
             // label1
             // 
@@ -157,6 +159,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmPermission
             // 
@@ -167,17 +170,18 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtExplanation);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDayAmount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dpEnd);
             this.Controls.Add(this.dpStart);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textUserNo);
             this.Controls.Add(this.txtUserNo);
+            this.Controls.Add(this.label);
             this.Name = "FrmPermission";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permission";
+            this.Load += new System.EventHandler(this.FrmPermission_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,13 +189,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textUserNo;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDayAmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtExplanation;
         private System.Windows.Forms.Label label2;
