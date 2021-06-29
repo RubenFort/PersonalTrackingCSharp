@@ -35,6 +35,7 @@ namespace PersonalTracking
         {
             label8.Visible = false;
             cmbTaskState.Visible = false;
+            dto = TaskBLL.GetAll();
         }
     }
 }
