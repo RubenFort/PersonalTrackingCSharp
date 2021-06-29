@@ -67,6 +67,7 @@ namespace PersonalTracking
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+            comboFull = false;
             cmbDepartment.DataSource = dto.Departements;
             cmbDepartment.DisplayMember = "DepartmentName";
             cmbDepartment.ValueMember = "ID";
@@ -76,6 +77,15 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFull)
+            {
+                cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == 
+                Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            }
         }
     }
 }
