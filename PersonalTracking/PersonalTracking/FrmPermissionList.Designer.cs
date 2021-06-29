@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnApprove = new System.Windows.Forms.Button();
-            this.btnDisapprove = new System.Windows.Forms.Button();
-            this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDayAmount = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
+            this.rbStart = new System.Windows.Forms.RadioButton();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dpStart = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
+            this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,24 +53,20 @@
             this.txtUserNo = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
-            this.rbStart = new System.Windows.Forms.RadioButton();
-            this.dpEnd = new System.Windows.Forms.DateTimePicker();
-            this.dpStart = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDayAmount = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDisapprove = new System.Windows.Forms.Button();
+            this.btnApprove = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pnlForAdmin.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlForAdmin.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,110 +78,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1140, 221);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnDisapprove);
-            this.panel2.Controls.Add(this.btnApprove);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnNew);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 522);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1140, 136);
-            this.panel2.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1140, 301);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(826, 44);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(120, 40);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(676, 44);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 40);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(518, 44);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(120, 40);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(365, 44);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(120, 40);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnApprove
-            // 
-            this.btnApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApprove.Location = new System.Drawing.Point(196, 18);
-            this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(120, 40);
-            this.btnApprove.TabIndex = 0;
-            this.btnApprove.Text = "Approve";
-            this.btnApprove.UseVisualStyleBackColor = true;
-            // 
-            // btnDisapprove
-            // 
-            this.btnDisapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisapprove.Location = new System.Drawing.Point(196, 78);
-            this.btnDisapprove.Name = "btnDisapprove";
-            this.btnDisapprove.Size = new System.Drawing.Size(120, 40);
-            this.btnDisapprove.TabIndex = 1;
-            this.btnDisapprove.Text = "Disapprove";
-            this.btnDisapprove.UseVisualStyleBackColor = true;
-            // 
-            // pnlForAdmin
-            // 
-            this.pnlForAdmin.Controls.Add(this.cmbPosition);
-            this.pnlForAdmin.Controls.Add(this.txtSurname);
-            this.pnlForAdmin.Controls.Add(this.label4);
-            this.pnlForAdmin.Controls.Add(this.textUserNo);
-            this.pnlForAdmin.Controls.Add(this.cmbDepartment);
-            this.pnlForAdmin.Controls.Add(this.label3);
-            this.pnlForAdmin.Controls.Add(this.label2);
-            this.pnlForAdmin.Controls.Add(this.txtUserNo);
-            this.pnlForAdmin.Controls.Add(this.txtName);
-            this.pnlForAdmin.Controls.Add(this.label1);
-            this.pnlForAdmin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlForAdmin.Location = new System.Drawing.Point(0, 0);
-            this.pnlForAdmin.Name = "pnlForAdmin";
-            this.pnlForAdmin.Size = new System.Drawing.Size(459, 221);
-            this.pnlForAdmin.TabIndex = 0;
             // 
             // panel3
             // 
@@ -200,6 +96,145 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(681, 221);
             this.panel3.TabIndex = 1;
+            // 
+            // txtDayAmount
+            // 
+            this.txtDayAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDayAmount.Location = new System.Drawing.Point(161, 118);
+            this.txtDayAmount.Name = "txtDayAmount";
+            this.txtDayAmount.Size = new System.Drawing.Size(208, 26);
+            this.txtDayAmount.TabIndex = 2;
+            this.txtDayAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDayAmount_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(46, 121);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 20);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Day Amount";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(301, 161);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(120, 40);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbDeliveryDate);
+            this.groupBox1.Controls.Add(this.rbStart);
+            this.groupBox1.Location = new System.Drawing.Point(411, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(163, 99);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            // 
+            // rbDeliveryDate
+            // 
+            this.rbDeliveryDate.AutoSize = true;
+            this.rbDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDeliveryDate.Location = new System.Drawing.Point(16, 61);
+            this.rbDeliveryDate.Name = "rbDeliveryDate";
+            this.rbDeliveryDate.Size = new System.Drawing.Size(134, 24);
+            this.rbDeliveryDate.TabIndex = 1;
+            this.rbDeliveryDate.TabStop = true;
+            this.rbDeliveryDate.Text = "Delivery Date";
+            this.rbDeliveryDate.UseVisualStyleBackColor = true;
+            // 
+            // rbStart
+            // 
+            this.rbStart.AutoSize = true;
+            this.rbStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbStart.Location = new System.Drawing.Point(16, 25);
+            this.rbStart.Name = "rbStart";
+            this.rbStart.Size = new System.Drawing.Size(111, 24);
+            this.rbStart.TabIndex = 0;
+            this.rbStart.TabStop = true;
+            this.rbStart.Text = "Start Date";
+            this.rbStart.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(454, 161);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(120, 40);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Task Date";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(46, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Start";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(46, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Finish";
+            // 
+            // dpStart
+            // 
+            this.dpStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStart.Location = new System.Drawing.Point(161, 51);
+            this.dpStart.Name = "dpStart";
+            this.dpStart.Size = new System.Drawing.Size(208, 26);
+            this.dpStart.TabIndex = 0;
+            // 
+            // dpEnd
+            // 
+            this.dpEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEnd.Location = new System.Drawing.Point(161, 83);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(208, 26);
+            this.dpEnd.TabIndex = 1;
+            // 
+            // pnlForAdmin
+            // 
+            this.pnlForAdmin.Controls.Add(this.cmbPosition);
+            this.pnlForAdmin.Controls.Add(this.txtSurname);
+            this.pnlForAdmin.Controls.Add(this.label4);
+            this.pnlForAdmin.Controls.Add(this.textUserNo);
+            this.pnlForAdmin.Controls.Add(this.cmbDepartment);
+            this.pnlForAdmin.Controls.Add(this.label3);
+            this.pnlForAdmin.Controls.Add(this.label2);
+            this.pnlForAdmin.Controls.Add(this.txtUserNo);
+            this.pnlForAdmin.Controls.Add(this.txtName);
+            this.pnlForAdmin.Controls.Add(this.label1);
+            this.pnlForAdmin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlForAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pnlForAdmin.Name = "pnlForAdmin";
+            this.pnlForAdmin.Size = new System.Drawing.Size(459, 221);
+            this.pnlForAdmin.TabIndex = 0;
             // 
             // cmbPosition
             // 
@@ -294,126 +329,91 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Name";
             // 
-            // btnSearch
+            // panel2
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(301, 161);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 40);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.btnDisapprove);
+            this.panel2.Controls.Add(this.btnApprove);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnNew);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 522);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1140, 136);
+            this.panel2.TabIndex = 1;
             // 
-            // btnClear
+            // btnDisapprove
             // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(454, 161);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(120, 40);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnDisapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisapprove.Location = new System.Drawing.Point(196, 78);
+            this.btnDisapprove.Name = "btnDisapprove";
+            this.btnDisapprove.Size = new System.Drawing.Size(120, 40);
+            this.btnDisapprove.TabIndex = 1;
+            this.btnDisapprove.Text = "Disapprove";
+            this.btnDisapprove.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // btnApprove
             // 
-            this.groupBox1.Controls.Add(this.rbDeliveryDate);
-            this.groupBox1.Controls.Add(this.rbStart);
-            this.groupBox1.Location = new System.Drawing.Point(411, 42);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(163, 99);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
+            this.btnApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApprove.Location = new System.Drawing.Point(196, 18);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(120, 40);
+            this.btnApprove.TabIndex = 0;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
             // 
-            // rbDeliveryDate
+            // btnClose
             // 
-            this.rbDeliveryDate.AutoSize = true;
-            this.rbDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDeliveryDate.Location = new System.Drawing.Point(16, 61);
-            this.rbDeliveryDate.Name = "rbDeliveryDate";
-            this.rbDeliveryDate.Size = new System.Drawing.Size(134, 24);
-            this.rbDeliveryDate.TabIndex = 1;
-            this.rbDeliveryDate.TabStop = true;
-            this.rbDeliveryDate.Text = "Delivery Date";
-            this.rbDeliveryDate.UseVisualStyleBackColor = true;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(826, 44);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(120, 40);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // rbStart
+            // btnUpdate
             // 
-            this.rbStart.AutoSize = true;
-            this.rbStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbStart.Location = new System.Drawing.Point(16, 25);
-            this.rbStart.Name = "rbStart";
-            this.rbStart.Size = new System.Drawing.Size(111, 24);
-            this.rbStart.TabIndex = 0;
-            this.rbStart.TabStop = true;
-            this.rbStart.Text = "Start Date";
-            this.rbStart.UseVisualStyleBackColor = true;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(518, 44);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(120, 40);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // dpEnd
+            // btnDelete
             // 
-            this.dpEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpEnd.Location = new System.Drawing.Point(161, 83);
-            this.dpEnd.Name = "dpEnd";
-            this.dpEnd.Size = new System.Drawing.Size(208, 26);
-            this.dpEnd.TabIndex = 1;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(676, 44);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(120, 40);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // dpStart
+            // btnNew
             // 
-            this.dpStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpStart.Location = new System.Drawing.Point(161, 51);
-            this.dpStart.Name = "dpStart";
-            this.dpStart.Size = new System.Drawing.Size(208, 26);
-            this.dpStart.TabIndex = 0;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(365, 44);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(120, 40);
+            this.btnNew.TabIndex = 2;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // label7
+            // dataGridView1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(46, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Finish";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Start";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Task Date";
-            // 
-            // txtDayAmount
-            // 
-            this.txtDayAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDayAmount.Location = new System.Drawing.Point(161, 118);
-            this.txtDayAmount.Name = "txtDayAmount";
-            this.txtDayAmount.Size = new System.Drawing.Size(208, 26);
-            this.txtDayAmount.TabIndex = 2;
-            this.txtDayAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDayAmount_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(46, 121);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 20);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Day Amount";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 221);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1140, 301);
+            this.dataGridView1.TabIndex = 2;
             // 
             // FrmPermissionList
             // 
@@ -426,15 +426,16 @@
             this.Name = "FrmPermissionList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PermissionList";
+            this.Load += new System.EventHandler(this.FrmPermissionList_Load_1);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.pnlForAdmin.ResumeLayout(false);
-            this.pnlForAdmin.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlForAdmin.ResumeLayout(false);
+            this.pnlForAdmin.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

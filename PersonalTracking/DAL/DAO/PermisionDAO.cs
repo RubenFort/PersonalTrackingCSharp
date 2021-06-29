@@ -28,9 +28,9 @@ namespace DAL.DAO
             return db.PERMISSIONSTATE.ToList();
         }
 
-        public static List<PermissionDetailDTO> GetPermissions()
+        public static List<PermissionDetailsDTO> GetPermissions()
         {
-            List<PermissionDetailDTO> permissions = new List<PermissionDetailDTO>();
+            List<PermissionDetailsDTO> permissions = new List<PermissionDetailsDTO>();
 
             var list = (from p in db.PERMISSION
                         join s in db.PERMISSIONSTATE on p.PermissionState equals s.ID
@@ -54,7 +54,7 @@ namespace DAL.DAO
 
             foreach (var item in list)
             {
-                PermissionDetailDTO dto = new PermissionDetailDTO();
+                PermissionDetailsDTO dto = new PermissionDetailsDTO();
 
                 dto.userNo = item.userNo;
                 dto.name = item.name;

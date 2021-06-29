@@ -67,7 +67,18 @@ namespace PersonalTracking
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
-             
+
+            comboFull = false;
+            cmbDepartment.DataSource = dto.Departements;
+            cmbDepartment.DisplayMember = "DepartmentName";
+            cmbDepartment.ValueMember = "ID";
+            cmbPosition.DataSource = dto.Positions;
+            cmbPosition.DisplayMember = "PositionName";
+            cmbPosition.ValueMember = "ID";
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
