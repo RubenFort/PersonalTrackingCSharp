@@ -162,7 +162,7 @@ namespace PersonalTracking
             detail.startDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             detail.endDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
             detail.explanation = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
-            detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
             detail.state = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
             detail.permissionDayAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
         }
