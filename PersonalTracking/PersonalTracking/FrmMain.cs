@@ -81,5 +81,16 @@ namespace PersonalTracking
         {
             Application.Exit();
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            if (!UserStatic.isAdmin)
+            {
+                btnDepartment.Visible = false;
+                btnPosition.Visible = false;
+                btnLogOut.Location = new Point(188, 164);
+                btnExit.Location = new Point(340, 164);
+            }
+        }
     }
 }

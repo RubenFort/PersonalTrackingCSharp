@@ -45,12 +45,17 @@ namespace PersonalTracking
                     employee = employeeList.First();
                     UserStatic.employeeID = employee.ID;
                     UserStatic.userNo = employee.UserNo;
-                    UserStatic.isAdmin = employee.isAdmin;
+                    UserStatic.isAdmin = Convert.ToBoolean(employee.isAdmin);
                     FrmMain frm = new FrmMain();
                     this.Hide();//Esconde el formulario actual
                     frm.ShowDialog();//Muestra el formulario
                 }
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,6 @@ namespace PersonalTracking
     {
         public static int employeeID { get; set; }
         public static int userNo { get; set; }
-        public static bool? isAdmin { get; set; }
+        public static bool isAdmin { get; set; }
     }
 }
