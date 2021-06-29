@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL.DTO;
+using DAL;
 using BLL;
 
 namespace PersonalTracking
@@ -18,15 +19,34 @@ namespace PersonalTracking
         {
             InitializeComponent();
         }
-
+        
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        SALARY salary = new SALARY();
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            if (txtYear.Text.Trim() == "")
+                MessageBox.Show("Please fill the year");
+            else if (cmbMonth.SelectedIndex == -1)
+                MessageBox.Show("Please select a month");
+            else if (txtSalary.Text.Trim() == "")
+                MessageBox.Show("Please sfill the salary");
+            else if (txtUserNo.Text.Trim() == "")
+                MessageBox.Show("Please select an employee from the table");
+            else
+            {
+                salary.Year = Convert.ToInt32(txtYear.Text);
+                salary.MonthID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                salary.Amount = Convert.ToInt32(txtSalary.Text);
+                SalaryBLL.addSalary(salary);
+                MessageBox.Show("Salary was added");
+                cmbMonth.SelectedIndex = -1;
+            }
+            salary = new SALARY();
         }
 
         SalaryDTO dto = new SalaryDTO();
@@ -66,13 +86,18 @@ namespace PersonalTracking
 
             cmbMonth.DataSource = dto.months;
             cmbMonth.DisplayMember = "Month Name";
-            cmbMonth.ValueMember = "ID";
+            cmbMonth.ValueMember = "MonthName";
             cmbMonth.SelectedIndex = -1;
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            txt
+            txtUserNo.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtYear.Text = DateTime.Today.Year.ToString();
+            txtSalary.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+            salary.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
         }
     }
 }

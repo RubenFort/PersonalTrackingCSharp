@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.DTO;
 using DAL.DAO;
+using DAL;
 
 namespace BLL
 {
@@ -18,6 +19,11 @@ namespace BLL
             dto.positions = PositionDAO.GetPositions();
             dto.months = SalaryDAO.GetMonths();
             return dto;
+        }
+
+        public static void addSalary(SALARY salary)
+        {
+            SalaryDAO.AddSalary(salary);
         }
     }
 }
