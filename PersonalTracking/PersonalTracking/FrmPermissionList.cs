@@ -183,5 +183,10 @@ namespace PersonalTracking
             fillAllDate();
             cleanFilters();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("are you sure to delete this permission", "Warning", MessageBoxButtons.YesNo);
+        }
     }
 }
