@@ -76,6 +76,8 @@ namespace PersonalTracking
             {
                 cmbPosition.DataSource = dto.positions.Where(x => x.DepartmentID ==
                 Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+                List<EmployeeDetailDTO> list = dto.employees;
+                dataGridView1.DataSource = list.Where(x => x.departmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             }
         }
 
@@ -84,6 +86,15 @@ namespace PersonalTracking
             txtUserName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
+
+        private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFull)
+            {
+                List<EmployeeDetailDTO> list = dto.employees;
+                dataGridView1.DataSource = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            }
         }
     }
 }
