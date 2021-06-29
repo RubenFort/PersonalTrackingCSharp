@@ -64,6 +64,7 @@ namespace PersonalTracking
             cmbPosition.DataSource = dto.positions;
             cmbPosition.DisplayMember = "PositionName";
             cmbPosition.ValueMember = "ID";
+            cmbPosition.SelectedIndex = -1;
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             cmbMonth.DataSource = dto.months;
