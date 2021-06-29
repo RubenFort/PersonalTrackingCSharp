@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using DAL.DTO;
 
 namespace DAL.DAO
@@ -66,6 +65,7 @@ namespace DAL.DAO
                 dto.oldSalary = item.amount;
                 salaryList.Add(dto);
             }
+            
 
             return salaryList;
         }

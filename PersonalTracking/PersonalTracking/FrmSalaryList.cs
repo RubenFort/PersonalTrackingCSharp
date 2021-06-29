@@ -31,6 +31,8 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            FillAllData();
+            clenFilter();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace PersonalTracking
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
-
+            
             
         }
 
@@ -128,6 +130,30 @@ namespace PersonalTracking
             }
                 
             dataGridView1.DataSource = list;
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            clenFilter();
+        }
+
+        private void clenFilter()
+        {
+            txtUserNo.Clear();
+            txtName.Clear();
+            txtSurname.Clear();
+            comboFull = false;
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.DataSource = dto.positions;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+            cmbMonth.SelectedIndex = -1;
+            rbMore.Checked = false;
+            rbLess.Checked = false;
+            rbEquals.Checked = false;
+            txtYear.Clear();
+            txtSalary.Clear();
+            dataGridView1.DataSource = dto.salaries;
         }
     }
 }
