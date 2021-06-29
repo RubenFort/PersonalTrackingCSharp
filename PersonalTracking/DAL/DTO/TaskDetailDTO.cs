@@ -12,8 +12,8 @@ namespace DAL.DTO
         public int userNo { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
-        public DateTime taskStartDate { get; set; }
-        public DateTime taskDeliveryDate { get; set; }
+        public DateTime? taskStartDate { get; set; }
+        public DateTime? taskDeliveryDate { get; set; }
         public string taskStateName { get; set; }
         public string departmentName { get; set; }
         public string positionName { get; set; }
