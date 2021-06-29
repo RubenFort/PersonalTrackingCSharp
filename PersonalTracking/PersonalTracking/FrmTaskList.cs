@@ -95,5 +95,31 @@ namespace PersonalTracking
                 Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<TaskDetailDTO> list = dto.tasks;
+            if (txtUserNo.Text.Trim() != "")
+                list = list.Where(x => x.userNo == Convert.ToInt32(label.Text)).ToList();
+            if (txtName.Text.Trim() != "")
+                list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
+            if (txtSurname.Text.Trim() != "")
+                list = list.Where(x => x.surname.Contains(txtSurname.Text)).ToList();
+            if (cmbDepartment.SelectedIndex != -1)
+                list = list.Where(x => x.departmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            if (cmbPosition.SelectedIndex != -1)
+                list = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            if (rbStart.Checked)
+                list = list.Where(x => x.taskStartDate > Convert.ToDateTime(dpStart.Value) && 
+                x.taskStartDate < Convert.ToDateTime(dpEnd.Value)).ToList();
+            if (rbDeliveryDate.Checked)
+                list = list.Where(x => x.taskDeliveryDate > Convert.ToDateTime(dpStart.Value) &&
+                x.taskDeliveryDate < Convert.ToDateTime(dpEnd.Value)).ToList();
+            if (cmbTaskState.SelectedIndex != -1)
+                list = list.Where(x => x.taskStateID == Convert.ToInt32(cmbTaskState.SelectedValue)).ToList();
+            dataGridView1.DataSource = list;
+
+            dataGridView1.DataSource = list;
+        }
     }
 }
