@@ -34,7 +34,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
+            this.rbEndDate = new System.Windows.Forms.RadioButton();
             this.rbStart = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,11 +46,11 @@
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textUserNo = new System.Windows.Forms.TextBox();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -129,10 +129,11 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbDeliveryDate);
+            this.groupBox1.Controls.Add(this.rbEndDate);
             this.groupBox1.Controls.Add(this.rbStart);
             this.groupBox1.Location = new System.Drawing.Point(411, 42);
             this.groupBox1.Name = "groupBox1";
@@ -140,17 +141,17 @@
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             // 
-            // rbDeliveryDate
+            // rbEndDate
             // 
-            this.rbDeliveryDate.AutoSize = true;
-            this.rbDeliveryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDeliveryDate.Location = new System.Drawing.Point(16, 61);
-            this.rbDeliveryDate.Name = "rbDeliveryDate";
-            this.rbDeliveryDate.Size = new System.Drawing.Size(134, 24);
-            this.rbDeliveryDate.TabIndex = 1;
-            this.rbDeliveryDate.TabStop = true;
-            this.rbDeliveryDate.Text = "Delivery Date";
-            this.rbDeliveryDate.UseVisualStyleBackColor = true;
+            this.rbEndDate.AutoSize = true;
+            this.rbEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEndDate.Location = new System.Drawing.Point(16, 61);
+            this.rbEndDate.Name = "rbEndDate";
+            this.rbEndDate.Size = new System.Drawing.Size(103, 24);
+            this.rbEndDate.TabIndex = 1;
+            this.rbEndDate.TabStop = true;
+            this.rbEndDate.Text = "End Date";
+            this.rbEndDate.UseVisualStyleBackColor = true;
             // 
             // rbStart
             // 
@@ -173,6 +174,7 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label5
             // 
@@ -227,11 +229,11 @@
             this.pnlForAdmin.Controls.Add(this.cmbPosition);
             this.pnlForAdmin.Controls.Add(this.txtSurname);
             this.pnlForAdmin.Controls.Add(this.label4);
-            this.pnlForAdmin.Controls.Add(this.textUserNo);
+            this.pnlForAdmin.Controls.Add(this.txtUserNo);
             this.pnlForAdmin.Controls.Add(this.cmbDepartment);
             this.pnlForAdmin.Controls.Add(this.label3);
             this.pnlForAdmin.Controls.Add(this.label2);
-            this.pnlForAdmin.Controls.Add(this.txtUserNo);
+            this.pnlForAdmin.Controls.Add(this.label);
             this.pnlForAdmin.Controls.Add(this.txtName);
             this.pnlForAdmin.Controls.Add(this.label1);
             this.pnlForAdmin.Dock = System.Windows.Forms.DockStyle.Left;
@@ -267,14 +269,14 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Position";
             // 
-            // textUserNo
+            // txtUserNo
             // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(145, 22);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.Size = new System.Drawing.Size(171, 26);
-            this.textUserNo.TabIndex = 0;
-            this.textUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(145, 22);
+            this.txtUserNo.Name = "txtUserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(171, 26);
+            this.txtUserNo.TabIndex = 0;
+            this.txtUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUserNo_KeyPress);
             // 
             // cmbDepartment
             // 
@@ -305,15 +307,15 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Surname";
             // 
-            // txtUserNo
+            // label
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(46, 25);
-            this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 25;
-            this.txtUserNo.Text = "UserNo";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(46, 25);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 25;
+            this.label.Text = "UserNo";
             // 
             // txtName
             // 
@@ -412,6 +414,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 221);
@@ -479,18 +482,18 @@
         private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDayAmount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbDeliveryDate;
+        private System.Windows.Forms.RadioButton rbEndDate;
         private System.Windows.Forms.RadioButton rbStart;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label5;

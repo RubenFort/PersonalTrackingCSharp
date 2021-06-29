@@ -42,6 +42,8 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            fillAllDate();
+            cleanFilters();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -90,10 +92,58 @@ namespace PersonalTracking
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].HeaderText = "Start Date";
             dataGridView1.Columns[9].HeaderText = "End Date";
-            dataGridView1.Columns[11].HeaderText = "Day Amount";
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[12].HeaderText = "State";
+            dataGridView1.Columns[10].HeaderText = "Day Amount";
+            dataGridView1.Columns[11].HeaderText = "State";
+            dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<PermissionDetailsDTO> list = dto.permissions;
+            if (txtUserNo.Text.Trim() != "")
+                list = list.Where(x => x.userNo == Convert.ToInt32(txtUserNo.Text)).ToList();
+            if (txtName.Text.Trim() != "")
+                list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
+            if (txtSurname.Text.Trim() != "")
+                list = list.Where(x => x.surname.Contains(txtSurname.Text)).ToList();
+            if (cmbDepartment.SelectedIndex != -1)
+                list = list.Where(x => x.departmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            if (cmbPosition.SelectedIndex != -1)
+                list = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            if (rbStart.Checked)
+                list = list.Where(x => x.startDate > Convert.ToDateTime(dpStart.Value) &&
+                x.startDate < Convert.ToDateTime(dpEnd.Value)).ToList();
+            if (rbEndDate.Checked)
+                list = list.Where(x => x.endDate > Convert.ToDateTime(dpStart.Value) &&
+                x.endDate < Convert.ToDateTime(dpEnd.Value)).ToList();
+            if (cmbState.SelectedIndex != -1)
+                list = list.Where(x => x.state == Convert.ToInt32(cmbState.SelectedValue)).ToList();
+            if (txtDayAmount.Text.Trim() != "")
+                list = list.Where(x => x.permissionDayAmount == Convert.ToInt32(txtDayAmount.Text)).ToList();
+
+            dataGridView1.DataSource = list;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cleanFilters();
+        }
+
+        private void cleanFilters()
+        {
+            txtUserNo.Clear();
+            txtName.Clear();
+            txtSurname.Clear();
+            comboFull = false;
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.DataSource = dto.positions;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+            rbEndDate.Checked = false;
+            rbStart.Checked = false;
+            cmbState.SelectedIndex = -1;
+            dataGridView1.DataSource = dto.permissions;
         }
     }
 }
