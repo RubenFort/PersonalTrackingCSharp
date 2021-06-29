@@ -39,8 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textUserNo = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.cmbTaskState = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -164,24 +164,24 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Name";
             // 
-            // textUserNo
-            // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(155, 24);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.ReadOnly = true;
-            this.textUserNo.Size = new System.Drawing.Size(221, 26);
-            this.textUserNo.TabIndex = 14;
-            // 
             // txtUserNo
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(41, 27);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(155, 24);
             this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 17;
-            this.txtUserNo.Text = "UserNo";
+            this.txtUserNo.ReadOnly = true;
+            this.txtUserNo.Size = new System.Drawing.Size(221, 26);
+            this.txtUserNo.TabIndex = 14;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(41, 27);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 17;
+            this.label.Text = "UserNo";
             // 
             // cmbTaskState
             // 
@@ -278,8 +278,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textUserNo);
             this.Controls.Add(this.txtUserNo);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.panel1);
             this.Name = "FrmTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -307,8 +307,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textUserNo;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.ComboBox cmbTaskState;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;

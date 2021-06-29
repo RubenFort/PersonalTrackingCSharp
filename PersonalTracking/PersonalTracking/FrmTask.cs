@@ -63,8 +63,10 @@ namespace PersonalTracking
             comboFull = true;
             
 
-            if (isUpdate)
+            if (isUpdate) //Está actualizando, FrmTaskList 98
             {
+                label8.Visible = true;
+                cmbTaskState.Visible = true;
                 txtName.Text = detail.name;
                 txtUserNo.Text = detail.userNo.ToString();
                 txtSurname.Text = detail.surname;
@@ -111,13 +113,36 @@ namespace PersonalTracking
                 MessageBox.Show("Content in empty");
             else
             {
-                task.TaskTitle = txtTitle.Text;
-                task.TaskContent = txtContent.Text;
-                task.TaskStartDate = DateTime.Today;
-                task.TaskState = 1;
-                TaskBLL.AddTask(task);
-                MessageBox.Show("Task was added");
-                reiniciarFormulario();
+                if (!isUpdate)
+                {
+                    task.TaskTitle = txtTitle.Text;
+                    task.TaskContent = txtContent.Text;
+                    task.TaskStartDate = DateTime.Today;
+                    task.TaskState = 1;
+                    TaskBLL.AddTask(task);
+                    MessageBox.Show("Task was added");
+                    reiniciarFormulario();
+                }
+                else if (isUpdate) //Está actualizando, FrmTaskList 98
+                {
+                    DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        TASK update = new TASK();
+                        update.ID = detail.taskID;
+                        if (Convert.ToInt32(txtUserNo.Text) != detail.userNo)
+                            update.EmployeeID = task.EmployeeID;
+                        else
+                            update.EmployeeID = detail.employeeID;
+                        update.TaskTitle = txtTitle.Text;
+                        update.TaskContent = txtContent.Text;
+                        update.TaskState = Convert.ToInt32(cmbTaskState.SelectedValue);
+                        TaskBLL.UpdateTask(update);
+                        MessageBox.Show("Task was update");
+                        this.Close();
+                    }
+                }
+                
             }
         }
 
@@ -142,7 +167,7 @@ namespace PersonalTracking
 
         private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
-            textUserNo.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtUserNo.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             task.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);

@@ -74,8 +74,6 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            MessageBox.Show(UserStatic.employeeID.ToString() + " " + 
-                UserStatic.userNo.ToString() + " " + UserStatic.isAdmin.ToString());
             
             //pnlForAdmin.Hide();
         }
@@ -97,7 +95,7 @@ namespace PersonalTracking
             else
             {
                 FrmTask frm = new FrmTask();
-                frm.isUpdate = true;
+                frm.isUpdate = true;//Movimiento importante
                 frm.detail = detail;
                 this.Hide();
                 frm.ShowDialog();
@@ -105,7 +103,6 @@ namespace PersonalTracking
                 fillAllData();
                 cleanFilters();
             }
-            
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,11 +163,11 @@ namespace PersonalTracking
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            detail.name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            detail.surname = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.surname = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             detail.title = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             detail.content = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
-            detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+            detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
             detail.taskStateID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
             detail.taskID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
             detail.employeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
