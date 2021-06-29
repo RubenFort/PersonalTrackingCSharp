@@ -37,11 +37,20 @@ namespace PersonalTracking
             else
             {
                 List<EMPLOYEE> employeeList = EmployeeBLL.getEmployess(Convert.ToInt32(txtUserNo.Text), txtPassword.Text);
+                if (employeeList.Count == 0)
+                    MessageBox.Show("Please control your information");
+                else
+                {
+                    EMPLOYEE employee = new EMPLOYEE();
+                    employee = employeeList.First();
+                    UserStatic.employeeID = employee.ID;
+                    UserStatic.userNo = employee.UserNo;
+                    UserStatic.isAdmin = employee.isAdmin;
+                    FrmMain frm = new FrmMain();
+                    this.Hide();//Esconde el formulario actual
+                    frm.ShowDialog();//Muestra el formulario
+                }
             }
-
-            /*FrmMain frm = new FrmMain();
-            this.Hide();//Esconde el formulario actual
-            frm.ShowDialog();//Muestra el formulario*/
         }
     }
 }
