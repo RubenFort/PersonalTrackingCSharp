@@ -22,6 +22,6 @@ namespace DAL.DTO
         public string  stateName { get; set; }
         public int  state { get; set; }
         public string explanation { get; set; }
-
+        public int permissionID { get; set; }
     }
 }

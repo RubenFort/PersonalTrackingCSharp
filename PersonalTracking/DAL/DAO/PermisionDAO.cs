@@ -68,6 +68,7 @@ namespace DAL.DAO
                 dto.state = item.stateID;
                 dto.stateName = item.stateName;
                 dto.explanation = item.explanationID;
+                dto.permissionID = item.permissionID;
                 permissions.Add(dto);
             }
             return permissions;

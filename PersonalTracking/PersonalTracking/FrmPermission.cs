@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using BLL;
+using DAL.DTO;
 
 namespace PersonalTracking
 {
@@ -25,6 +26,8 @@ namespace PersonalTracking
         }
 
         TimeSpan permissionDay;//Para calcular días de vacaiones del usuario
+        public bool isUpdate = false;
+        public PermissionDetailsDTO detail = new PermissionDetailsDTO();
 
         private void FrmPermission_Load(object sender, EventArgs e)
         {

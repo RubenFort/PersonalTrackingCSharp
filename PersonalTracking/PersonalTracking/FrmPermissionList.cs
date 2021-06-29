@@ -48,10 +48,19 @@ namespace PersonalTracking
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmPermission frm = new FrmPermission();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
+            if (detail.permissionID == 0)
+                MessageBox.Show("Please select a parmission from table");
+            else
+            {
+                FrmPermission frmPermission = new FrmPermission();
+                frmPermission.isUpdate = true;
+                frmPermission.detail = detail;
+                this.Hide();
+                frmPermission.ShowDialog();
+                this.Visible = true;
+                fillAllDate();
+                cleanFilters();
+            }
         }
 
         PermissionDTO dto = new PermissionDTO();
@@ -144,6 +153,18 @@ namespace PersonalTracking
             rbStart.Checked = false;
             cmbState.SelectedIndex = -1;
             dataGridView1.DataSource = dto.permissions;
+        }
+        PermissionDetailsDTO detail = new PermissionDetailsDTO();
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.permissionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detail.startDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detail.endDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.explanation = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+            detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detail.state = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.permissionDayAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
         }
     }
 }
