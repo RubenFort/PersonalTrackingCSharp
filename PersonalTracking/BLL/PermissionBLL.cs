@@ -30,5 +30,10 @@ namespace BLL
         {
             PermisionDAO.UpdatePermission(permission);
         }
+
+        public static void UpdatePermisssion(int permissionID, int approved)
+        {
+            PermisionDAO.UpdatePermission(permissionID, approved);
+        }
     }
 }

@@ -105,6 +105,7 @@ namespace PersonalTracking
             dataGridView1.Columns[11].HeaderText = "State";
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -165,6 +166,22 @@ namespace PersonalTracking
             detail.userNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
             detail.state = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
             detail.permissionDayAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermisssion(detail.permissionID, PermissionState.approved);
+            MessageBox.Show("Approved");
+            fillAllDate();
+            cleanFilters();
+        }
+
+        private void btnDisapprove_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermisssion(detail.permissionID, PermissionState.disapproved);
+            MessageBox.Show("Disapproved");
+            fillAllDate();
+            cleanFilters();
         }
     }
 }

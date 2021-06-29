@@ -377,6 +377,7 @@
             this.btnDisapprove.TabIndex = 1;
             this.btnDisapprove.Text = "Disapprove";
             this.btnDisapprove.UseVisualStyleBackColor = true;
+            this.btnDisapprove.Click += new System.EventHandler(this.btnDisapprove_Click);
             // 
             // btnApprove
             // 
@@ -387,6 +388,7 @@
             this.btnApprove.TabIndex = 0;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnClose
             // 
