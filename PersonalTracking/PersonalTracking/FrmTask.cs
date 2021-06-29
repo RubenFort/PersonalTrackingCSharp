@@ -63,6 +63,20 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
+            cmbTaskState.DataSource = dto.taskStates;
+            cmbTaskState.DisplayMember = "StateName";
+            cmbTaskState.ValueMember = "ID";
+            cmbTaskState.DataSource = dto.taskStates;
+            cmbTaskState.SelectedIndex = -1;
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFull)
+            {
+                cmbPosition.DataSource = dto.positions.Where(x => x.DepartmentID ==
+                Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            }
         }
     }
 }
