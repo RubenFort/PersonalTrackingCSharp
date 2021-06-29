@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.DTO;
 
+
 namespace DAL.DAO
 {
     public class TaskDAO : EmployeeContext
@@ -78,6 +79,17 @@ namespace DAL.DAO
             }
 
             return taskList;
+        }
+
+        public static void ApproveTask(int taskID, bool isAdmin)
+        {
+            TASK tsk = db.TASK.First(x => x.ID == taskID);
+            if (isAdmin)
+                tsk.TaskState = TaskStates.approved;
+            else
+                tsk.TaskState = TaskStates.delivery;
+            tsk.TaskDeliveryDate = DateTime.Today;
+            db.SubmitChanges();
         }
 
         public static void DeleteTask(int taskID)

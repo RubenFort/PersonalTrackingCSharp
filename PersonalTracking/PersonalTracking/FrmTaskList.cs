@@ -77,7 +77,6 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            //pnlForAdmin.Hide();
             if (!UserStatic.isAdmin)
             {
                 btnNew.Visible = false;
@@ -85,6 +84,8 @@ namespace PersonalTracking
                 btnDelete.Visible = false;
                 btnClose.Location = new Point(495, 28);
                 btnApprove.Location = new Point(342, 28);
+                pnlForAdmin.Hide();
+                btnApprove.Text = "Delivery";
             }
         }
 
@@ -193,6 +194,25 @@ namespace PersonalTracking
             {
                 TaskBLL.DeleteTask(detail.taskID);
                 MessageBox.Show("Task was deleted");
+                fillAllData();
+                cleanFilters();
+            }
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (UserStatic.isAdmin && detail.taskStateID == TaskStates.onEmployee && detail.employeeID != UserStatic.employeeID)
+                MessageBox.Show("Before approve a task employee have to delivery task");
+            else if (UserStatic.isAdmin && detail.taskStateID == TaskStates.approved)
+                MessageBox.Show("This task is already aprroved");
+            else if (!UserStatic.isAdmin && detail.taskStateID == TaskStates.delivery)
+                MessageBox.Show("This task is already delivered");
+            else if(!UserStatic.isAdmin && detail.taskStateID == TaskStates.approved)
+                MessageBox.Show("This task is already approved");
+            else
+            {
+                TaskBLL.ApproveTask(detail.taskID, UserStatic.isAdmin);
+                MessageBox.Show("Task was Update");
                 fillAllData();
                 cleanFilters();
             }

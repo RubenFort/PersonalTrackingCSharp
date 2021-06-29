@@ -354,6 +354,7 @@
             this.btnApprove.TabIndex = 0;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnClose
             // 
