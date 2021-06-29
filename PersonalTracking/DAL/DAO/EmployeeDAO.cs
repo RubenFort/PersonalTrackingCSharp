@@ -56,15 +56,16 @@ namespace DAL.DAO
                 dto.userNo = item.UserNo;
                 dto.surname = item.Surname;
                 dto.employeeID = item.EmployeeID;
-                dto.imagePath = item.;
-                dto. = item.;
-                dto. = item.;
-                dto. = item.;
-                dto. = item.;
-                dto. = item.;
-                dto. = item.;
-
-                dto. = item.;
+                dto.password = item.Password;
+                dto.departmentID = item.DepartmentID;
+                dto.departmentName = item.DepartmentName;
+                dto.positionID = item.PositionÏD;
+                dto.positionName = item.PositionName;
+                dto.isAdmin = item.isAdmin.HasValue;
+                dto.salary = item.Salary;
+                dto.birthDay = item.BirthDay;
+                dto.adress = item.Adress;
+                employeeList.Add(dto);
             }
             return employeeList;
         }

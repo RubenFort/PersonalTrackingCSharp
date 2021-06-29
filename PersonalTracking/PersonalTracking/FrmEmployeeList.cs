@@ -47,9 +47,35 @@ namespace PersonalTracking
         }
 
         EmployeeDTO dto = new EmployeeDTO();
+        private bool comboFull = false;
+
         private void FrmEmployeeList_Load(object sender, EventArgs e)
         {
             dto = EmployeeBLL.GetAll();
+            dataGridView1.DataSource = dto.employees;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "User No";
+            dataGridView1.Columns[2].HeaderText = "Name";
+            dataGridView1.Columns[3].HeaderText = "Surname";
+            dataGridView1.Columns[4].HeaderText = "Department";
+            dataGridView1.Columns[5].HeaderText = "Position";
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].HeaderText = "Salary";
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[13].Visible = false;
+            cmbDepartment.DataSource = dto.Departements;
+            cmbDepartment.DisplayMember = "DepartmentName";
+            cmbDepartment.ValueMember = "ID";
+            cmbPosition.DataSource = dto.Positions;
+            cmbPosition.DisplayMember = "PositionName";
+            cmbPosition.ValueMember = "ID";
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
         }
     }
 }
