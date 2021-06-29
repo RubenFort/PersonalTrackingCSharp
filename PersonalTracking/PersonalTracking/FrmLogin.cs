@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL;
 
 namespace PersonalTracking
 {
@@ -30,9 +32,16 @@ namespace PersonalTracking
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FrmMain frm = new FrmMain();
+            if (txtUserNo.Text.Trim() == "" || txtPassword.Text.Trim() == "")
+                MessageBox.Show("Pelase fill the userNo and password");
+            else
+            {
+                List<EMPLOYEE> employeeList = EmployeeBLL.getEmployess(Convert.ToInt32(txtUserNo.Text), txtPassword.Text);
+            }
+
+            /*FrmMain frm = new FrmMain();
             this.Hide();//Esconde el formulario actual
-            frm.ShowDialog();//Muestra el formulario
+            frm.ShowDialog();//Muestra el formulario*/
         }
     }
 }

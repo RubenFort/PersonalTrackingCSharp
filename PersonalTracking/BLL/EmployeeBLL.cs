@@ -34,5 +34,10 @@ namespace BLL
                 return true;
                 
         }
+
+        public static List<EMPLOYEE> getEmployess(int v, string text)
+        {
+            return EmployeeDAO.GetEmployees(v, text);
+        }
     }
 }
