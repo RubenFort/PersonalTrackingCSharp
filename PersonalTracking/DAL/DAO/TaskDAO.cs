@@ -63,7 +63,7 @@ namespace DAL.DAO
                 dto.title = item.title;
                 dto.content = item.content;
                 dto.taskStartDate = item.starDate.Value;
-                dto.taskDeliveryDate = item.deliveryDate.Value;
+                //dto.taskDeliveryDate = item.deliveryDate.HasValue;
                 dto.taskStateName = item.taskStateName;
                 dto.taskStateID = item.taskStateID;
                 dto.userNo = item.userNo;
