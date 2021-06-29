@@ -32,7 +32,14 @@ namespace PersonalTracking
         private void FrmPermission_Load(object sender, EventArgs e)
         {
             txtUserNo.Text = UserStatic.userNo.ToString();
-
+            if (isUpdate)
+            {
+                dpStart.Value = detail.startDate.Value;
+                dpEnd.Value = detail.endDate.Value;
+                txtDayAmount.Text = detail.permissionDayAmount.ToString();
+                txtExplanation.Text = detail.explanation;
+                txtUserNo.Text = detail.userNo.ToString();
+            }
         }
 
         private void dpStart_ValueChanged(object sender, EventArgs e)
