@@ -78,5 +78,12 @@ namespace PersonalTracking
                 Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             }
         }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            txtUserName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
     }
 }
