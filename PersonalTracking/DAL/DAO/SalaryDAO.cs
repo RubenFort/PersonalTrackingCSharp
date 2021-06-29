@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.DTO;
 
 namespace DAL.DAO
 {
@@ -25,6 +26,11 @@ namespace DAL.DAO
 
                 throw ex;
             }
+        }
+
+        public static List<SalaryDetailDTO> GetSalaies()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL.DTO;
+using BLL;
+using DAL;
 
 namespace PersonalTracking
 {
@@ -41,6 +44,12 @@ namespace PersonalTracking
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        SalaryDTO dto = new SalaryDTO();
+        private void FrmSalaryList_Load(object sender, EventArgs e)
+        {
+            dto = SalaryBLL.GetAll();
         }
     }
 }
