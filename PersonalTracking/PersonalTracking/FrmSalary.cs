@@ -40,7 +40,7 @@ namespace PersonalTracking
             else
             {
                 salary.Year = Convert.ToInt32(txtYear.Text);
-                salary.MonthID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
                 salary.Amount = Convert.ToInt32(txtSalary.Text);
                 SalaryBLL.addSalary(salary);
                 MessageBox.Show("Salary was added");
@@ -84,9 +84,9 @@ namespace PersonalTracking
             if(dto.departments.Count > 0)
                 comboFull = true;
 
-            cmbMonth.DataSource = dto.months;
-            cmbMonth.DisplayMember = "Month Name";
-            cmbMonth.ValueMember = "MonthName";
+            cmbMonth.DataSource = dto.months;//Datos para el ComboBox
+            cmbMonth.DisplayMember = "MonthName";//Columna que selecciono para mostrar datos en ComboBox
+            cmbMonth.ValueMember = "ID";//Columna que selecciono para coger los datos seleccionados en ComboBox
             cmbMonth.SelectedIndex = -1;
         }
 
