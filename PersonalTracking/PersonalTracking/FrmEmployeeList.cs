@@ -97,6 +97,24 @@ namespace PersonalTracking
                 list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
             if (txtSurname.Text.Trim() != "")
                 list = list.Where(x => x.surname.Contains(txtSurname.Text)).ToList();
+            if (cmbDepartment.SelectedIndex != -1)
+                list = list.Where(x => x.departmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            if (cmbPosition.SelectedIndex != -1)
+                list = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUserNo.Clear();
+            txtName.Clear();
+            txtSurname.Clear();
+            comboFull = false;
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.DataSource = dto.Positions;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+            dataGridView1.DataSource = dto.employees;
         }
     }
 }

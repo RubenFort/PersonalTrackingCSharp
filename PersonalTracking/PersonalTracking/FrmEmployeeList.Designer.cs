@@ -39,8 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textUserNo = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -64,8 +64,8 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textUserNo);
             this.panel1.Controls.Add(this.txtUserNo);
+            this.panel1.Controls.Add(this.label);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -81,6 +81,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -168,24 +169,24 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Name";
             // 
-            // textUserNo
-            // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(120, 24);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.Size = new System.Drawing.Size(171, 26);
-            this.textUserNo.TabIndex = 0;
-            this.textUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
             // txtUserNo
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(21, 27);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(120, 24);
             this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 9;
-            this.txtUserNo.Text = "UserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(171, 26);
+            this.txtUserNo.TabIndex = 0;
+            this.txtUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(21, 27);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 9;
+            this.label.Text = "UserNo";
             // 
             // dataGridView1
             // 
@@ -281,8 +282,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.TextBox textUserNo;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
