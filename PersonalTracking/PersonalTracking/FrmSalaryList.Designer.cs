@@ -38,12 +38,12 @@
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
-            this.textUserNo = new System.Windows.Forms.TextBox();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtUserNo = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,6 +92,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear
             // 
@@ -162,12 +163,12 @@
             // pnlForAdmin
             // 
             this.pnlForAdmin.Controls.Add(this.cmbPosition);
-            this.pnlForAdmin.Controls.Add(this.textUserNo);
+            this.pnlForAdmin.Controls.Add(this.txtUserNo);
             this.pnlForAdmin.Controls.Add(this.txtSurname);
             this.pnlForAdmin.Controls.Add(this.label1);
             this.pnlForAdmin.Controls.Add(this.label4);
             this.pnlForAdmin.Controls.Add(this.txtName);
-            this.pnlForAdmin.Controls.Add(this.txtUserNo);
+            this.pnlForAdmin.Controls.Add(this.label);
             this.pnlForAdmin.Controls.Add(this.cmbDepartment);
             this.pnlForAdmin.Controls.Add(this.label2);
             this.pnlForAdmin.Controls.Add(this.label3);
@@ -186,13 +187,13 @@
             this.cmbPosition.Size = new System.Drawing.Size(141, 28);
             this.cmbPosition.TabIndex = 4;
             // 
-            // textUserNo
+            // txtUserNo
             // 
-            this.textUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUserNo.Location = new System.Drawing.Point(125, 22);
-            this.textUserNo.Name = "textUserNo";
-            this.textUserNo.Size = new System.Drawing.Size(171, 26);
-            this.textUserNo.TabIndex = 0;
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNo.Location = new System.Drawing.Point(125, 22);
+            this.txtUserNo.Name = "txtUserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(171, 26);
+            this.txtUserNo.TabIndex = 0;
             // 
             // txtSurname
             // 
@@ -230,15 +231,15 @@
             this.txtName.Size = new System.Drawing.Size(171, 26);
             this.txtName.TabIndex = 1;
             // 
-            // txtUserNo
+            // label
             // 
-            this.txtUserNo.AutoSize = true;
-            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserNo.Location = new System.Drawing.Point(26, 25);
-            this.txtUserNo.Name = "txtUserNo";
-            this.txtUserNo.Size = new System.Drawing.Size(69, 20);
-            this.txtUserNo.TabIndex = 35;
-            this.txtUserNo.Text = "UserNo";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(26, 25);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(69, 20);
+            this.label.TabIndex = 35;
+            this.label.Text = "UserNo";
             // 
             // cmbDepartment
             // 
@@ -248,6 +249,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(141, 28);
             this.cmbDepartment.TabIndex = 3;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -414,12 +416,12 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cmbPosition;
-        private System.Windows.Forms.TextBox textUserNo;
+        private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label txtUserNo;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

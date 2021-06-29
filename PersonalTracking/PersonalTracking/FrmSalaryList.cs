@@ -47,9 +47,87 @@ namespace PersonalTracking
         }
 
         SalaryDTO dto = new SalaryDTO();
-        private void FrmSalaryList_Load(object sender, EventArgs e)
+        private bool comboFull;
+        void FillAllData()
         {
             dto = SalaryBLL.GetAll();
+            dataGridView1.DataSource = dto.salaries;
+            //Lógica de limpieza
+            comboFull = false;
+            cmbDepartment.DataSource = dto.departments;
+            cmbDepartment.DisplayMember = "DepartmentName";
+            cmbDepartment.ValueMember = "ID";
+            if (dto.departments.Count > 0)
+                comboFull = true;
+            cmbPosition.DataSource = dto.positions;
+            cmbPosition.DisplayMember = "PositionName";
+            cmbPosition.ValueMember = "ID";
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.SelectedIndex = -1;
+            cmbMonth.DataSource = dto.months;
+            cmbMonth.DisplayMember = "Month Name";
+            cmbMonth.ValueMember = "MonthName";
+            cmbMonth.SelectedIndex = -1;
+        }
+
+        private void FrmSalaryList_Load(object sender, EventArgs e)
+        {
+            FillAllData();
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "User No";
+            dataGridView1.Columns[2].HeaderText = "Name";
+            dataGridView1.Columns[3].HeaderText = "Surname";
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].HeaderText = "Month";
+            dataGridView1.Columns[9].HeaderText = "Year";
+            dataGridView1.Columns[11].HeaderText = "Salary";
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[13].Visible = false;
+
+            
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboFull)
+            {
+                cmbPosition.DataSource = dto.positions.Where(x => x.DepartmentID ==
+                Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<SalaryDetailDTO> list = dto.salaries;
+            if (txtUserNo.Text.Trim() != "")
+                list = list.Where(x => x.userNo == Convert.ToInt32(txtUserNo.Text)).ToList();
+            if (txtName.Text.Trim() != "")
+                list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
+            if (txtSurname.Text.Trim() != "")
+                list = list.Where(x => x.surname.Contains(txtSurname.Text)).ToList();
+            if (cmbDepartment.SelectedIndex != -1)
+                list = list.Where(x => x.departmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            if (cmbPosition.SelectedIndex != -1)
+                list = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            if (txtYear.Text.Trim() != "")
+                list = list.Where(x => x.salaryYear == Convert.ToInt32(txtSalary.Text)).ToList();
+            if (cmbMonth.SelectedIndex != -1)
+                list = list.Where(x => x.monthID == Convert.ToInt32(cmbMonth.SelectedValue)).ToList();
+            if (txtSalary.Text.Trim() != "")
+            {
+                if (rbMore.Checked)
+                    list = list.Where(x => x.salaryAmount > Convert.ToInt32(txtSalary.Text)).ToList();
+                else if (rbLess.Checked)
+                    list = list.Where(x => x.salaryAmount < Convert.ToInt32(txtSalary.Text)).ToList();
+                else
+                    list = list.Where(x => x.salaryAmount == Convert.ToInt32(txtSalary.Text)).ToList();
+            }
+                
+            dataGridView1.DataSource = list;
         }
     }
 }
