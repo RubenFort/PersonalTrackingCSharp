@@ -38,7 +38,7 @@ namespace DAL.DAO
                         select new
                         {
                             userNo = e.UserNo,
-                            nameof = e.Name,
+                            name = e.Name,
                             surname = e.SurName,
                             stateName = s.StateName,
                             stateID = p.PermissionState,
@@ -52,6 +52,24 @@ namespace DAL.DAO
                             positionID = e.PositionID
                         }).OrderBy(x => x.startDate).ToList();
 
+            foreach (var item in list)
+            {
+                PermissionDetailDTO dto = new PermissionDetailDTO();
+
+                dto.userNo = item.userNo;
+                dto.name = item.name;
+                dto.surname = item.surname;
+                dto.employeeID = item.employeeID;
+                dto.permissionDayAmount = item.dayAmount;
+                dto.startDate = item.startDate;
+                dto.endDate = item.endDate;
+                dto.departmentID = item.departmentID;
+                dto. positionID= item.positionID;
+                dto.state = item.stateID;
+                dto.stateName = item.stateName;
+                dto.explanation = item.explanationID;
+                permissions.Add(dto);
+            }
             return permissions;
         }
     }
