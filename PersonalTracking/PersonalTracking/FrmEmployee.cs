@@ -139,7 +139,16 @@ namespace PersonalTracking
         bool isUnique = false;
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            if (txtUserNo.Text.Trim() == "")
+                MessageBox.Show("User no is Empty");
+            else
+            {
+                isUnique = EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text));
+                if (!isUnique)
+                    MessageBox.Show("This user No is used by another employee, please change");
+                else
+                    MessageBox.Show("This user is usable");
+            }
         }
     }
 }

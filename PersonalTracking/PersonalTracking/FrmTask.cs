@@ -110,7 +110,16 @@ namespace PersonalTracking
                 task.TaskStartDate = DateTime.Today;
                 task.TaskState = 1;
                 TaskBLL.AddTask(task);
+                MessageBox.Show("Task was added");
+                reiniciarFormulario();
             }
+        }
+
+        private void reiniciarFormulario()
+        {
+            txtTitle.Clear();
+            txtContent.Clear();
+            task = new TASK();
         }
     }
 }
