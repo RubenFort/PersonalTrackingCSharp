@@ -27,6 +27,8 @@ namespace PersonalTracking
 
         TaskDTO dto = new TaskDTO();
         private bool comboFull = false;
+        public bool isUpdate = false;
+        public TaskDetailDTO detail = new TaskDetailDTO();
 
         private void FrmTask_Load(object sender, EventArgs e)
         {
@@ -59,11 +61,21 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
-            cmbTaskState.DataSource = dto.taskStates;
-            cmbTaskState.DisplayMember = "StateName";
-            cmbTaskState.ValueMember = "ID";
-            cmbTaskState.DataSource = dto.taskStates;
-            cmbTaskState.SelectedIndex = -1;
+            
+
+            if (isUpdate)
+            {
+                txtName.Text = detail.name;
+                txtUserNo.Text = detail.userNo.ToString();
+                txtSurname.Text = detail.surname;
+                txtTitle.Text = detail.title;
+                txtContent.Text = detail.content;
+                cmbTaskState.DataSource = dto.taskStates;
+                cmbTaskState.DisplayMember = "StateName";
+                cmbTaskState.ValueMember = "ID";
+                cmbTaskState.DataSource = dto.taskStates;
+                cmbTaskState.SelectedValue = detail.taskStateID; ;
+            }
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
