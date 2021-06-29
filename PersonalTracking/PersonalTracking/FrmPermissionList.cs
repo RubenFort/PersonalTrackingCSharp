@@ -55,10 +55,31 @@ namespace PersonalTracking
         PermissionDTO dto = new PermissionDTO();
         private bool comboFull;
 
-        private void FrmPermissionList_Load_1(object sender, EventArgs e)
+        void fillAllDate()
         {
             dto = PermissionBLL.getAll();
             dataGridView1.DataSource = dto.permissions;
+
+            comboFull = false;
+            cmbDepartment.DataSource = dto.departments;
+            cmbDepartment.DisplayMember = "DepartmentName";
+            cmbDepartment.ValueMember = "ID";
+            cmbPosition.DataSource = dto.positions;
+            cmbPosition.DisplayMember = "PositionName";
+            cmbPosition.ValueMember = "ID";
+            cmbState.DataSource = dto.states;
+            cmbState.DisplayMember = "StateName";
+            cmbState.ValueMember = "ID";
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.SelectedIndex = -1;
+            cmbState.SelectedIndex = -1;
+            comboFull = true;
+        }
+
+        private void FrmPermissionList_Load_1(object sender, EventArgs e)
+        {
+            fillAllDate();
+
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "User No";
             dataGridView1.Columns[2].HeaderText = "Name";
@@ -73,16 +94,6 @@ namespace PersonalTracking
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[12].HeaderText = "State";
             dataGridView1.Columns[13].Visible = false;
-            comboFull = false;
-            cmbDepartment.DataSource = dto.departments;
-            cmbDepartment.DisplayMember = "DepartmentName";
-            cmbDepartment.ValueMember = "ID";
-            cmbPosition.DataSource = dto.positions;
-            cmbPosition.DisplayMember = "PositionName";
-            cmbPosition.ValueMember = "ID";
-            cmbDepartment.SelectedIndex = -1;
-            cmbPosition.SelectedIndex = -1;
-            comboFull = true;
         }
     }
 }

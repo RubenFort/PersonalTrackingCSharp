@@ -61,6 +61,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbState = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,6 +83,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cmbState);
+            this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.txtDayAmount);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.btnSearch);
@@ -119,7 +123,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(301, 161);
+            this.btnSearch.Location = new System.Drawing.Point(350, 155);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(120, 40);
             this.btnSearch.TabIndex = 3;
@@ -163,7 +167,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(454, 161);
+            this.btnClear.Location = new System.Drawing.Point(503, 155);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 40);
             this.btnClear.TabIndex = 4;
@@ -415,6 +419,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(1140, 301);
             this.dataGridView1.TabIndex = 2;
             // 
+            // cmbState
+            // 
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(161, 155);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(141, 28);
+            this.cmbState.TabIndex = 30;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(45, 161);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(53, 20);
+            this.label23.TabIndex = 31;
+            this.label23.Text = "State";
+            // 
             // FrmPermissionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,5 +498,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.DateTimePicker dpEnd;
+        private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.Label label23;
     }
 }
