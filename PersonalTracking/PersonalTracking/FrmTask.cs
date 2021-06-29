@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL.DTO;
 using BLL;
+using DAL;
 
 namespace PersonalTracking
 {
@@ -22,11 +23,6 @@ namespace PersonalTracking
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
         }
 
         TaskDTO dto = new TaskDTO();
@@ -86,6 +82,7 @@ namespace PersonalTracking
             txtUserName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            task.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,6 +91,25 @@ namespace PersonalTracking
             {
                 List<EmployeeDetailDTO> list = dto.employees;
                 dataGridView1.DataSource = list.Where(x => x.positionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
+            }
+        }
+
+        TASK task = new TASK();
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (task.EmployeeID == 0)
+                MessageBox.Show("Please select an employee on table");
+            else if(txtTitle.Text.Trim() == "")
+                MessageBox.Show("Task title in empty");
+            else if (txtContent.Text.Trim() == "")
+                MessageBox.Show("Content in empty");
+            else
+            {
+                task.TaskTitle = txtTitle.Text;
+                task.TaskContent = txtContent.Text;
+                task.TaskStartDate = DateTime.Today;
+                task.TaskState = 1;
+                TaskBLL.AddTask(task);
             }
         }
     }

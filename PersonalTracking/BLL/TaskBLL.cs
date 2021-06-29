@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.DTO;
 using DAL.DAO;
+using DAL;
 
 namespace BLL
 {
@@ -19,6 +20,11 @@ namespace BLL
             taskDTO.taskStates = TaskDAO.GetTaskStates();
 
             return taskDTO;
+        }
+
+        public static void AddTask(TASK task)
+        {
+            TaskDAO.AddTask(task);
         }
     }
 }
