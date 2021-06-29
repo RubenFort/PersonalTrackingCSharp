@@ -22,5 +22,6 @@ namespace DAL.DTO
         public string taskStateName { get; set; }
         public DateTime taskStartDate { get; set; }
         public DateTime taskDeliveryDate { get; set; }
+        public int taskStateID { get; set; }
     }
 }

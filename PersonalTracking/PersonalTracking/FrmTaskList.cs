@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using DAL.DTO;
+using BLL;
 
 namespace PersonalTracking
 {
@@ -27,9 +30,10 @@ namespace PersonalTracking
             this.Close();
         }
 
+        TaskDTO dto = new TaskDTO();
         private void FrmTaskList_Load(object sender, EventArgs e)
         {
-            //Ocultar panel
+            dto = TaskBLL.GetAll();
             //pnlForAdmin.Hide();
         }
 
