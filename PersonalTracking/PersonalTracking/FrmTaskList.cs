@@ -36,6 +36,9 @@ namespace PersonalTracking
         void fillAllData()
         {
             dto = TaskBLL.GetAll();
+            //Si no soy admin solo podré ver mis propias tareas
+            if (!UserStatic.isAdmin)
+                dto.tasks = dto.tasks.Where(x => x.employeeID == UserStatic.employeeID).ToList();
             dataGridView1.DataSource = dto.tasks;
             comboFull = false;
             cmbDepartment.DataSource = dto.departments;
@@ -74,8 +77,15 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            
             //pnlForAdmin.Hide();
+            if (!UserStatic.isAdmin)
+            {
+                btnNew.Visible = false;
+                btnUpdate.Visible = false;
+                btnDelete.Visible = false;
+                btnClose.Location = new Point(495, 28);
+                btnApprove.Location = new Point(342, 28);
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
