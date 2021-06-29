@@ -33,26 +33,10 @@ namespace PersonalTracking
         TaskDTO dto = new TaskDTO();
         private bool comboFull = false;
 
-        private void FrmTaskList_Load(object sender, EventArgs e)
+        void fillAllData()
         {
             dto = TaskBLL.GetAll();
             dataGridView1.DataSource = dto.tasks;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "User No";
-            dataGridView1.Columns[2].HeaderText = "Name";
-            dataGridView1.Columns[3].HeaderText = "Surname";
-            dataGridView1.Columns[4].HeaderText = "Start Date";
-            dataGridView1.Columns[5].HeaderText = "Delivery Date";
-            dataGridView1.Columns[6].HeaderText = "Task State";
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
-            dataGridView1.Columns[13].Visible = false;
-            dataGridView1.Columns[14].Visible = false;
-
             comboFull = false;
             cmbDepartment.DataSource = dto.departments;
             cmbDepartment.DisplayMember = "DepartmentName";
@@ -68,6 +52,28 @@ namespace PersonalTracking
             cmbTaskState.ValueMember = "ID";
             cmbTaskState.DataSource = dto.taskStates;
             cmbTaskState.SelectedIndex = -1;
+        }
+
+        private void FrmTaskList_Load(object sender, EventArgs e)
+        {
+            fillAllData();
+            dataGridView1.Columns[0].HeaderText = "Task Title";
+            dataGridView1.Columns[1].HeaderText = "User No";
+            dataGridView1.Columns[2].HeaderText = "Name";
+            dataGridView1.Columns[3].HeaderText = "Surname";
+            dataGridView1.Columns[4].HeaderText = "Start Date";
+            dataGridView1.Columns[5].HeaderText = "Delivery Date";
+            dataGridView1.Columns[6].HeaderText = "Task State";
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
+
+            
             //pnlForAdmin.Hide();
         }
 
@@ -77,6 +83,8 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            fillAllData();
+            cleanFilters();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -100,7 +108,7 @@ namespace PersonalTracking
         {
             List<TaskDetailDTO> list = dto.tasks;
             if (txtUserNo.Text.Trim() != "")
-                list = list.Where(x => x.userNo == Convert.ToInt32(label.Text)).ToList();
+                list = list.Where(x => x.userNo == Convert.ToInt32(txtUserNo.Text)).ToList();
             if (txtName.Text.Trim() != "")
                 list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
             if (txtSurname.Text.Trim() != "")
@@ -120,6 +128,27 @@ namespace PersonalTracking
             dataGridView1.DataSource = list;
 
             dataGridView1.DataSource = list;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cleanFilters();
+        }
+
+        private void cleanFilters()
+        {
+            txtUserNo.Clear();
+            txtName.Clear();
+            txtSurname.Clear();
+            comboFull = false;
+            cmbDepartment.SelectedIndex = -1;
+            cmbPosition.DataSource = dto.positions;
+            cmbPosition.SelectedIndex = -1;
+            comboFull = true;
+            rbDeliveryDate.Checked = false;
+            rbStart.Checked = false;
+            cmbTaskState.SelectedIndex = -1;
+            dataGridView1.DataSource = dto.tasks;
         }
     }
 }
