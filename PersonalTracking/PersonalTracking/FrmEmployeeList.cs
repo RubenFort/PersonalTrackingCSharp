@@ -87,5 +87,16 @@ namespace PersonalTracking
                 Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<EmployeeDetailDTO> list = dto.employees;
+            if (txtUserNo.Text.Trim() != "")
+                list = list.Where(x => x.userNo == Convert.ToInt32(txtUserNo.Text)).ToList();
+            if (txtName.Text.Trim() != "")
+                list = list.Where(x => x.name.Contains(txtName.Text)).ToList();
+            if (txtSurname.Text.Trim() != "")
+                list = list.Where(x => x.surname.Contains(txtSurname.Text)).ToList();
+        }
     }
 }
