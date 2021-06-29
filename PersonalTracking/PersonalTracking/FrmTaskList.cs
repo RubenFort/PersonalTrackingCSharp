@@ -175,5 +175,17 @@ namespace PersonalTracking
             detail.taskDeliveryDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
             detail.taskDeliveryDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you usre to delete this task?", "Warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                TaskBLL.DeleteTask(detail.taskID);
+                MessageBox.Show("Task was deleted");
+                fillAllData();
+                cleanFilters();
+            }
+        }
     }
 }
