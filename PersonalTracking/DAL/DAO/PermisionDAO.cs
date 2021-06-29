@@ -73,5 +73,23 @@ namespace DAL.DAO
             }
             return permissions;
         }
+
+        public static void UpdatePermission(PERMISSION permission)
+        {
+            try
+            {
+                PERMISSION pr = db.PERMISSION.First(x => x.ID == permission.ID);
+                pr.PermissionStartDate = permission.PermissionStartDate;
+                pr.PermissionEndDate = permission.PermissionEndDate;
+                pr.PermissionExplanation = permission.PermissionExplanation;
+                pr.PermissionDay = permission.PermissionDay;
+                db.SubmitChanges();//Persistir;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

@@ -25,5 +25,10 @@ namespace BLL
             dto.permissions = PermisionDAO.GetPermissions();
             return dto;
         }
+
+        public static void UpdatePermisssion(PERMISSION permission)
+        {
+            PermisionDAO.UpdatePermission(permission);
+        }
     }
 }

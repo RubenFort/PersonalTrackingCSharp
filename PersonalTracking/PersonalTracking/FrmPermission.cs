@@ -65,20 +65,39 @@ namespace PersonalTracking
             else
             {
                 PERMISSION permission = new PERMISSION();
-                permission.EmployeeID = UserStatic.employeeID;
-                permission.PermissionState = 1;
-                permission.PermissionStartDate = dpStart.Value.Date;
-                permission.PermissionEndDate = dpEnd.Value.Date;
-                permission.PermissionDay = Convert.ToInt32(txtDayAmount.Text);
-                permission.PermissionExplanation = txtExplanation.Text;
-                PermissionBLL.AddPermisssion(permission);
-                MessageBox.Show("Permision was adeed");
-                permission = new PERMISSION();
+                if (!isUpdate)
+                {
+                    permission.EmployeeID = UserStatic.employeeID;
+                    permission.PermissionState = 1;
+                    permission.PermissionStartDate = dpStart.Value.Date;
+                    permission.PermissionEndDate = dpEnd.Value.Date;
+                    permission.PermissionDay = Convert.ToInt32(txtDayAmount.Text);
+                    permission.PermissionExplanation = txtExplanation.Text;
+                    PermissionBLL.AddPermisssion(permission);
+                    MessageBox.Show("Permision was adeed");
+                    permission = new PERMISSION();
 
-                dpStart.Value = DateTime.Today;
-                dpEnd.Value = DateTime.Today;
-                txtDayAmount.Clear();
-                txtExplanation.Clear();
+                    dpStart.Value = DateTime.Today;
+                    dpEnd.Value = DateTime.Today;
+                    txtDayAmount.Clear();
+                    txtExplanation.Clear();
+                }
+                else if (isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure", "Warning", MessageBoxButtons.YesNo);
+                    if(result == DialogResult.Yes)
+                    {
+                        permission.ID = detail.permissionID;
+                        permission.PermissionExplanation = txtExplanation.Text;
+                        permission.PermissionStartDate = dpStart.Value;
+                        permission.PermissionEndDate = dpEnd.Value;
+                        permission.PermissionDay = Convert.ToInt32(txtDayAmount.Text);
+                        PermissionBLL.UpdatePermisssion(permission);
+                        MessageBox.Show("Permission was Update");
+                        this.Close();
+                    }
+                }
+                
             }
         }
     }
