@@ -186,7 +186,19 @@ namespace PersonalTracking
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("are you sure to delete this permission", "Warning", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure to delete this permission", "Warning", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                if (detail.state == PermissionState.approved || detail.state == PermissionState.disapproved)
+                    MessageBox.Show("You cannot delete approved os disapproved permissions");
+                else
+                {
+                    PermissionBLL.DeletePermission(detail.permissionID);
+                    MessageBox.Show("Permission was cleared");
+                    fillAllDate();
+                    cleanFilters();
+                }
+            }
         }
     }
 }
