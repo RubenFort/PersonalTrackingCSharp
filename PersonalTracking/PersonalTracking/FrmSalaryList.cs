@@ -53,6 +53,9 @@ namespace PersonalTracking
         void FillAllData()
         {
             dto = SalaryBLL.GetAll();
+            //Si el usuario no es Admin solo se muestra su salario, no tiene acceso al salario del resto de empleados
+            if (!UserStatic.isAdmin)
+                dto.salaries = dto.salaries.Where(x => x.employeeID == UserStatic.employeeID).ToList();  
             dataGridView1.DataSource = dto.salaries;
             //Lógica de limpieza
             comboFull = false;
@@ -90,7 +93,15 @@ namespace PersonalTracking
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
-            
+
+            if (!UserStatic.isAdmin)
+            {
+                btnUpdate.Hide();
+                btnDelete.Hide();
+                btnNew.Location = new Point(417, 20);
+                btnClose.Location = new Point(575, 20);
+                pnlForAdmin.Hide();
+            }
             
         }
 
