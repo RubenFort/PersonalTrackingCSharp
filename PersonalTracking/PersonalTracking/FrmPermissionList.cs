@@ -50,6 +50,8 @@ namespace PersonalTracking
         {
             if (detail.permissionID == 0)
                 MessageBox.Show("Please select a parmission from table");
+            else if (detail.state == PermissionState.approved || detail.state == PermissionState.disapproved)
+                MessageBox.Show("You can not update any approved or disapproved permission");
             else
             {
                 FrmPermission frmPermission = new FrmPermission();
