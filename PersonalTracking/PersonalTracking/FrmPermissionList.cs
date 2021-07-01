@@ -69,8 +69,9 @@ namespace PersonalTracking
         void fillAllDate()
         {
             dto = PermissionBLL.getAll();
+            if (!UserStatic.isAdmin)
+                dto.permissions = dto.permissions.Where(x => x.employeeID == UserStatic.employeeID).ToList();
             dataGridView1.DataSource = dto.permissions;
-
             comboFull = false;
             cmbDepartment.DataSource = dto.departments;
             cmbDepartment.DisplayMember = "DepartmentName";
@@ -106,6 +107,14 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
+            if (!UserStatic.isAdmin)
+            {
+                pnlForAdmin.Visible = false;
+                btnApprove.Hide();
+                btnDisapprove.Hide();
+                btnDelete.Hide();
+                btnClose.Location = new Point(676, 44);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
