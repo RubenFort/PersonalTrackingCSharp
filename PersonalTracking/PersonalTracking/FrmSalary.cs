@@ -51,6 +51,8 @@ namespace PersonalTracking
 
         SalaryDTO dto = new SalaryDTO();
         private bool comboFull;
+        public SalaryDetailDTO detail = new SalaryDetailDTO();
+        public bool isUpdate = false;
 
         private void FrmSalary_Load(object sender, EventArgs e)
         {
