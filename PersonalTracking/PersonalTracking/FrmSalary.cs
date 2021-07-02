@@ -37,6 +37,7 @@ namespace PersonalTracking
                 MessageBox.Show("Please fill the salary");
             else
             {
+                bool control = false;
                 if (!isUpdate)
                 {
                     if (salary.EmployeeID == 0)
@@ -63,7 +64,6 @@ namespace PersonalTracking
                         salary.Year = Convert.ToInt32(txtYear.Text);
                         salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
                         salary.Amount = Convert.ToInt32(txtSalary.Text);
-                        bool control = false;
                         if (salary.Amount > detail.oldSalary)
                             control = true;
                         SalaryBLL.UpdateSalary(salary, control);

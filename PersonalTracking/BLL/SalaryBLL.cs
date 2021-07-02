@@ -30,6 +30,8 @@ namespace BLL
         public static void UpdateSalary(SALARY salary, bool control)
         {
             SalaryDAO.UpdateSalary(salary);
+            if (control)
+                EmployeeDAO.UpdateEmployee(salary.EmployeeID, salary.Amount);
         }
     }
 }
