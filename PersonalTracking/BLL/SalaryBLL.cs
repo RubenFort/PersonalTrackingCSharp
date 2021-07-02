@@ -29,7 +29,7 @@ namespace BLL
 
         public static void UpdateSalary(SALARY salary, bool control)
         {
-            throw new NotImplementedException();
+            SalaryDAO.UpdateSalary(salary);
         }
     }
 }

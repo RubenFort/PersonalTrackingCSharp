@@ -151,7 +151,6 @@ namespace PersonalTracking
                 else
                     list = list.Where(x => x.salaryAmount == Convert.ToInt32(txtSalary.Text)).ToList();
             }
-                
             dataGridView1.DataSource = list;
         }
 
