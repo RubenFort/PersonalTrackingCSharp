@@ -15,6 +15,9 @@ namespace PersonalTracking
 {
     public partial class FrmSalary : Form
     {
+        SALARY salary = new SALARY();
+        int oldSalary = 0;
+
         public FrmSalary()
         {
             InitializeComponent();
@@ -24,8 +27,6 @@ namespace PersonalTracking
         {
             this.Close();
         }
-
-        SALARY salary = new SALARY();
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -47,7 +48,9 @@ namespace PersonalTracking
                         salary.Year = Convert.ToInt32(txtYear.Text);
                         salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
                         salary.Amount = Convert.ToInt32(txtSalary.Text);
-                        SalaryBLL.AddSalary(salary);
+                        if (salary.Amount > detail.oldSalary)
+                            control = true;
+                        SalaryBLL.AddSalary(salary, control);
                         MessageBox.Show("Salary was added");
                         cmbMonth.SelectedIndex = -1;
                         salary = new SALARY();
@@ -136,6 +139,7 @@ namespace PersonalTracking
             txtYear.Text = DateTime.Today.Year.ToString();
             txtSalary.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
             salary.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            oldSalary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
         }
     }
 }
