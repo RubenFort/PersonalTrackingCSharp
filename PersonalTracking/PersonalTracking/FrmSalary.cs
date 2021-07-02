@@ -70,6 +70,8 @@ namespace PersonalTracking
                         if (salary.Amount > detail.oldSalary)
                             control = true;
                         SalaryBLL.UpdateSalary(salary, control);
+                        MessageBox.Show("Salary was updated");
+                        this.Close();
                     }
                 }
             }

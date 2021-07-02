@@ -54,7 +54,6 @@ namespace PersonalTracking
                 FillAllData();
                 clenFilter();
             }
-            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -189,6 +188,8 @@ namespace PersonalTracking
             detail.monthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
             detail.salaryAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString());
             detail.oldSalary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString());
+            detail.monthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
+            detail.monthName = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
     }
 }
