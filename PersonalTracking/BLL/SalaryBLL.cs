@@ -22,9 +22,14 @@ namespace BLL
             return dto;
         }
 
-        public static void addSalary(SALARY salary)
+        public static void AddSalary(SALARY salary)
         {
             SalaryDAO.AddSalary(salary);
+        }
+
+        public static void UpdateSalary(SALARY salary, bool control)
+        {
+            throw new NotImplementedException();
         }
     }
 }

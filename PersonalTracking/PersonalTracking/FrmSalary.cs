@@ -34,19 +34,42 @@ namespace PersonalTracking
             else if (cmbMonth.SelectedIndex == -1)
                 MessageBox.Show("Please select a month");
             else if (txtSalary.Text.Trim() == "")
-                MessageBox.Show("Please sfill the salary");
-            else if (txtUserNo.Text.Trim() == "")
-                MessageBox.Show("Please select an employee from the table");
+                MessageBox.Show("Please fill the salary");
             else
             {
-                salary.Year = Convert.ToInt32(txtYear.Text);
-                salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
-                salary.Amount = Convert.ToInt32(txtSalary.Text);
-                SalaryBLL.addSalary(salary);
-                MessageBox.Show("Salary was added");
-                cmbMonth.SelectedIndex = -1;
+                if (!isUpdate)
+                {
+                    if (salary.EmployeeID == 0)
+                        MessageBox.Show("Please select an employee from the table");
+                    else
+                    {
+                        salary.Year = Convert.ToInt32(txtYear.Text);
+                        salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
+                        salary.Amount = Convert.ToInt32(txtSalary.Text);
+                        SalaryBLL.AddSalary(salary);
+                        MessageBox.Show("Salary was added");
+                        cmbMonth.SelectedIndex = -1;
+                        salary = new SALARY();
+                    }
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure?", "Title", MessageBoxButtons.YesNo);
+                    if (DialogResult.Yes == result)
+                    {
+                        SALARY salary = new SALARY();
+                        salary.ID = detail.salaryID;
+                        salary.EmployeeID = detail.employeeID;
+                        salary.Year = Convert.ToInt32(txtYear.Text);
+                        salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
+                        salary.Amount = Convert.ToInt32(txtSalary.Text);
+                        bool control = false;
+                        if (salary.Amount > detail.oldSalary)
+                            control = true;
+                        SalaryBLL.UpdateSalary(salary, control);
+                    }
+                }
             }
-            salary = new SALARY();
         }
 
         SalaryDTO dto = new SalaryDTO();
