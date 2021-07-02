@@ -129,7 +129,7 @@ namespace PersonalTracking
                 txtSalary.Text = detail.salaryAmount.ToString();
                 txtSurname.Text = detail.surname;
                 txtYear.Text = detail.salaryYear.ToString();
-                cmbMonth.SelectedValue = detail.monthID;
+                //cmbMonth.SelectedValue = detail.monthID;
             }
         }
 

@@ -16,6 +16,11 @@ namespace PersonalTracking
 {
     public partial class FrmEmployee : Form
     {
+        EmployeeDTO dto = new EmployeeDTO();
+        public EmployeeDetailDTO detail = new EmployeeDetailDTO();
+        public bool isUpdate = false;
+        string imagePath = "";
+
         public FrmEmployee()
         {
             InitializeComponent();
@@ -36,8 +41,6 @@ namespace PersonalTracking
             e.Handled = General.isNumber(e);
         }
 
-        EmployeeDTO dto = new EmployeeDTO();
-
         //Recojer valores de Departments y Positions de la BD y mostrarlos en los ComboBox del formulario
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
@@ -51,6 +54,22 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
+            if (isUpdate)
+            {
+                txtName.Text = detail.name;
+                txtSurname.Text = detail.surname;
+                txtUserNo.Text = detail.userNo.ToString();
+                txtPassword.Text = detail.password;
+                chAdmin.Checked = Convert.ToBoolean(detail.isAdmin);
+                txtAdress.Text = detail.adress;
+                dtBirthday.Value = Convert.ToDateTime(detail.birthDay);
+                cmbDepartment.SelectedValue = detail.departmentID;
+                cmbPosition.SelectedValue = detail.positionID;
+                txtSalary.Text = detail.salary.ToString();
+                imagePath = Application.StartupPath + "\\images\\" + detail.imagePath;
+                txtImagePath.Text = imagePath;
+                pictureBox1.ImageLocation = imagePath;
+            }
         }
         bool comboFull = false;
         //Mostrar los puestos de trabajo asociados a un departmento en concreto
