@@ -145,7 +145,7 @@ namespace PersonalTracking
                     if (result == DialogResult.Yes)
                     {
                         EMPLOYEE employee = new EMPLOYEE();
-                        //Me aseguro que los campos no esten vacios o ha
+                        //Me aseguro que los campos no esten vacios
                         if (txtImagePath.Text != imagePath)
                         {
                             if (File.Exists(@"images\\" + detail.imagePath))
@@ -154,24 +154,21 @@ namespace PersonalTracking
                             employee.ImagePath = fileName;
                         }
                         else
-                        {
-                            employee.ImagePath = detail.imagePath;
-                            employee.ID = detail.employeeID;
-                            employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                            employee.Name = txtName.Text;
-                            employee.Password = txtPassword.Text;
-                            employee.isAdmin = chAdmin.Checked;
-                            employee.SurName = txtSurname.Text;
-                            employee.Salary = Convert.ToInt32(txtSalary.Text);
-                            employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
-                            employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
-                            employee.Adress = txtAdress.Text;
-                            employee.BirthDay = dtBirthday.Value;
-                            employee.ImagePath = fileName;
-                            EmployeeBLL.UpdateEmplyee(employee);
-                            MessageBox.Show("Employee was update");
-                            this.Close();
-                        }
+                            employee.ImagePath = detail.imagePath; ;
+                        employee.ID = detail.employeeID;
+                        employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                        employee.Password = txtPassword.Text;
+                        employee.isAdmin = chAdmin.Checked;
+                        employee.Name = txtName.Text;
+                        employee.SurName = txtSurname.Text;
+                        employee.Salary = Convert.ToInt32(txtSalary.Text);
+                        employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                        employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
+                        employee.Adress = txtAdress.Text;
+                        employee.BirthDay = dtBirthday.Value;
+                        EmployeeBLL.UpdateEmployee(employee);
+                        MessageBox.Show("Employeed was updated");
+                        this.Close();
                     }
                 }
             }

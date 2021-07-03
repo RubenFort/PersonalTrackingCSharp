@@ -39,9 +39,9 @@ namespace BLL
             return EmployeeDAO.GetEmployees(v, text);
         }
 
-        public static void UpdateEmplyee(EMPLOYEE employee)
+        public static void UpdateEmployee(EMPLOYEE employee)
         {
-            throw new NotImplementedException();
+            EmployeeDAO.UpdateEmployee(employee);
         }
     }
 }
