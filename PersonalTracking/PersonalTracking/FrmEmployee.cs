@@ -100,8 +100,6 @@ namespace PersonalTracking
         {
             if (txtUserNo.Text.Trim() == "")
                 MessageBox.Show("User no is Empty");
-            else if (!EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
-                MessageBox.Show("This user No is used by another employee, please change");
             else if (txtPassword.Text.Trim() == "")
                 MessageBox.Show("Password is Empty");
             else if (txtName.Text.Trim() == "")
@@ -116,23 +114,66 @@ namespace PersonalTracking
                 MessageBox.Show("Select a Position");
             else
             {
-                EMPLOYEE employee = new EMPLOYEE();
-                //MessageBox.Show(label.Text);
-                employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                employee.Password = txtPassword.Text;
-                employee.isAdmin = chAdmin.Checked;
-                employee.Name = txtName.Text;
-                employee.SurName = txtSurname.Text;
-                employee.Salary = Convert.ToInt32(txtSalary.Text);
-                employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
-                employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
-                employee.Adress = txtAdress.Text;
-                employee.BirthDay = dtBirthday.Value;
-                employee.ImagePath = fileName;
-                EmployeeBLL.AddEmployee(employee);
-                File.Copy(txtImagePath.Text, @"images\\" + fileName);//Copiar imagen a capeta(persistir datos)
-                MessageBox.Show("Employee was Added");
-                resertForm();
+                if (!isUpdate)
+                {
+                    if (!EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
+                        MessageBox.Show("This user No is used by another employee, please change");
+                    else
+                    {
+                        EMPLOYEE employee = new EMPLOYEE();
+                        //MessageBox.Show(label.Text);
+                        employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                        employee.Password = txtPassword.Text;
+                        employee.isAdmin = chAdmin.Checked;
+                        employee.Name = txtName.Text;
+                        employee.SurName = txtSurname.Text;
+                        employee.Salary = Convert.ToInt32(txtSalary.Text);
+                        employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                        employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
+                        employee.Adress = txtAdress.Text;
+                        employee.BirthDay = dtBirthday.Value;
+                        employee.ImagePath = fileName;
+                        EmployeeBLL.AddEmployee(employee);
+                        File.Copy(txtImagePath.Text, @"images\\" + fileName);//Copiar imagen a capeta(persistir datos)
+                        MessageBox.Show("Employee was Added");
+                        resertForm();
+                    }
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        EMPLOYEE employee = new EMPLOYEE();
+                        //Me aseguro que los campos no esten vacios o ha
+                        if (txtImagePath.Text != imagePath)
+                        {
+                            if (File.Exists(@"images\\" + detail.imagePath))
+                                File.Delete(@"images\\" + detail.imagePath);
+                            File.Copy(txtImagePath.Text, @"images\\" + fileName);
+                            employee.ImagePath = fileName;
+                        }
+                        else
+                        {
+                            employee.ImagePath = detail.imagePath;
+                            employee.ID = detail.employeeID;
+                            employee.UserNo = Convert.ToInt32(txtUserNo.Text);
+                            employee.Name = txtName.Text;
+                            employee.Password = txtPassword.Text;
+                            employee.isAdmin = chAdmin.Checked;
+                            employee.SurName = txtSurname.Text;
+                            employee.Salary = Convert.ToInt32(txtSalary.Text);
+                            employee.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                            employee.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
+                            employee.Adress = txtAdress.Text;
+                            employee.BirthDay = dtBirthday.Value;
+                            employee.ImagePath = fileName;
+                            EmployeeBLL.UpdateEmplyee(employee);
+                            MessageBox.Show("Employee was update");
+                            this.Close();
+                        }
+                    }
+                }
             }
         }
 

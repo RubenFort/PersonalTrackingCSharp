@@ -32,12 +32,16 @@ namespace BLL
                 return false;
             else
                 return true;
-                
         }
 
         public static List<EMPLOYEE> getEmployess(int v, string text)
         {
             return EmployeeDAO.GetEmployees(v, text);
+        }
+
+        public static void UpdateEmplyee(EMPLOYEE employee)
+        {
+            throw new NotImplementedException();
         }
     }
 }
