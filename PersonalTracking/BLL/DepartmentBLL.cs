@@ -22,7 +22,7 @@ namespace BLL
 
         public static void UpdateDepartment(DEPARTMENT department)
         {
-            throw new NotImplementedException();
+            DepartmentDAO.UpdateDepartment(department);
         }
     }
 }
