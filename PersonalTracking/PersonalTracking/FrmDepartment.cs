@@ -14,6 +14,10 @@ namespace PersonalTracking
 {
     public partial class FrmDepartment : Form
     {
+        //En este caso el DTO, es DEPARTMENT, es un objeto de directamente de la BD
+        public DEPARTMENT detail = new DEPARTMENT();
+        public bool isUpdate = false;
+        
         public FrmDepartment()
         {
             InitializeComponent();

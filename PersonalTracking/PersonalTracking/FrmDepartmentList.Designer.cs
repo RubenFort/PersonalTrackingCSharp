@@ -57,6 +57,7 @@
             this.dataGridDepartment.Name = "dataGridDepartment";
             this.dataGridDepartment.Size = new System.Drawing.Size(629, 540);
             this.dataGridDepartment.TabIndex = 1;
+            this.dataGridDepartment.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDepartment_RowEnter);
             // 
             // panel1
             // 

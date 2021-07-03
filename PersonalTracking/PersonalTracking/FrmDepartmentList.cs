@@ -14,6 +14,10 @@ namespace PersonalTracking
 {
     public partial class FrmDepartmentList : Form
     {
+        //En este caso el DTO, es DEPARTMENT, es un objeto de directamente de la BD
+        public DEPARTMENT detail = new DEPARTMENT();
+        List<DEPARTMENT> list = new List<DEPARTMENT>();
+
         public FrmDepartmentList()
         {
             InitializeComponent();
@@ -42,8 +46,6 @@ namespace PersonalTracking
             this.Visible = true;
         }
 
-        List<DEPARTMENT> list = new List<DEPARTMENT>();
-
         /// <summary>
         /// Mostrar listado de departamentos en una tabla
         /// </summary>
@@ -56,6 +58,12 @@ namespace PersonalTracking
             //dataGridDepartment.Columns[0].Visible = false;//Oculta columna 0
             dataGridDepartment.Columns[0].HeaderText = "Department ID";//Al mostrar cambiar nombre columna 
             dataGridDepartment.Columns[1].HeaderText = "Department Name";
+        }
+
+        private void dataGridDepartment_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.ID = Convert.ToInt32(dataGridDepartment.Rows[e.RowIndex].Cells[0].Value);
+            detail.DepartmentName = dataGridDepartment.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }
