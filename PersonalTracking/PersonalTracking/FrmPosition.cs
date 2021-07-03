@@ -67,6 +67,12 @@ namespace PersonalTracking
                     position.ID = detail.ID;
                     position.PositionName = txtPosition.Text;
                     position.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                    bool control = false;
+                    if (Convert.ToInt32(cmbDepartment.SelectedValue) != detail.oldDepartmentID)
+                        control = true;
+                    PositionBLL.UpdatePosition(position, control);
+                    MessageBox.Show("Position was Updates");
+                    this.Close();
                 }
             }  
         }
