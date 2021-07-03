@@ -42,7 +42,7 @@ namespace DAL.DAO
                     PositionDTO dto = new PositionDTO();
                     dto.ID = item.positionID;
                     dto.PositionName = item.positionName;
-                    dto.DepartmentNane = item.departmentName;
+                    dto.departmentNane = item.departmentName;
                     dto.DepartmentID = item.departmentID;
                     positionList.Add(dto);
                 }

@@ -8,6 +8,7 @@ namespace DAL.DTO
 {
     public class PositionDTO : POSITION 
     {
-        public string DepartmentNane { get; set; }
+        public string departmentNane { get; set; }
+        public int oldDepartmentID { get; set; }
     }
 }
