@@ -70,6 +70,17 @@ namespace DAL.DAO
             return employeeList;
         }
 
+        public static void UpdateEmployee(POSITION position)
+        {
+            //Recojo los empleados que corresponden a ese puedto de trabajo(position)
+            List <EMPLOYEE> list = db.EMPLOYEE.Where(x => x.PositionID == position.ID).ToList();
+            foreach (var item in list)
+            {
+                item.DepartmentID = position.DepartmentID;
+            }
+            db.SubmitChanges();
+        }
+
         public static void UpdateEmployee(EMPLOYEE employee)
         {
             try
@@ -104,7 +115,6 @@ namespace DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -118,7 +128,6 @@ namespace DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
