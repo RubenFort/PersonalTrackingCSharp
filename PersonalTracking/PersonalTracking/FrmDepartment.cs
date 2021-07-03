@@ -31,9 +31,7 @@ namespace PersonalTracking
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(txtDepartment.Text.Trim() == "")
-            {
                 MessageBox.Show("Please fill the name field");
-            }
             else
             {
                 DEPARTMENT department = new DEPARTMENT();
@@ -51,7 +49,9 @@ namespace PersonalTracking
                     {
                         department.ID = detail.ID;
                         department.DepartmentName = txtDepartment.Text;
-                        DepartmentBLL.AddDepartment(department);
+                        DepartmentBLL.UpdateDepartment(department);
+                        MessageBox.Show("Department was updated");
+                        this.Close();
                     }
                 }
             }
