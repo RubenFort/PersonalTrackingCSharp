@@ -40,10 +40,19 @@ namespace PersonalTracking
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmDepartment frm = new FrmDepartment();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
+            if (detail.ID == 0)
+                MessageBox.Show("Please select a departement from table");
+            else
+            {
+                FrmDepartment frm = new FrmDepartment();
+                frm.isUpdate = true;
+                frm.detail = detail;//Valores recogidos de DataGridView
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                list = DepartmentBLL.GetDepartments();
+                dataGridDepartment.DataSource = list;
+            }
         }
 
         /// <summary>

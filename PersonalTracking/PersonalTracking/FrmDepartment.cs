@@ -37,17 +37,30 @@ namespace PersonalTracking
             else
             {
                 DEPARTMENT department = new DEPARTMENT();
-                department.DepartmentName = txtDepartment.Text;
-                BLL.DepartmentBLL.AddDepartment(department);
-                MessageBox.Show("Department added");
-                txtDepartment.Clear();
+                if (!isUpdate)
+                {
+                    department.DepartmentName = txtDepartment.Text;
+                    DepartmentBLL.AddDepartment(department);
+                    MessageBox.Show("Department added");
+                    txtDepartment.Clear();
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (DialogResult.Yes == result)
+                    {
+                        department.ID = detail.ID;
+                        department.DepartmentName = txtDepartment.Text;
+                        DepartmentBLL.AddDepartment(department);
+                    }
+                }
             }
-            
         }
 
         private void FrmDepartment_Load(object sender, EventArgs e)
         {
-
+            if (isUpdate)
+                txtDepartment.Text = detail.DepartmentName;
         }
     }
 }
