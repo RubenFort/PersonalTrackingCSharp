@@ -31,7 +31,8 @@ namespace PersonalTracking
                 EmployeeDTO dto = EmployeeBLL.GetAll();
                 EmployeeDetailDTO detail = dto.employees.First(x => x.employeeID == UserStatic.employeeID);
                 FrmEmployee frm = new FrmEmployee();
-                //Incompleto
+                frm.detail = detail;
+                frm.isUpdate = true;
                 this.Hide();
                 frm.ShowDialog();
                 this.Visible = true;
