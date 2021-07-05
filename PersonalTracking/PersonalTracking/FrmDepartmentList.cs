@@ -74,5 +74,17 @@ namespace PersonalTracking
             detail.ID = Convert.ToInt32(dataGridDepartment.Rows[e.RowIndex].Cells[0].Value);
             detail.DepartmentName = dataGridDepartment.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this Position", "Warning", MessageBoxButtons.YesNo);
+            if (DialogResult.Yes == result)
+            {
+                DepartmentBLL.DeleteDepartment(detail.ID);
+                MessageBox.Show("Employee was deleted");
+                list = DepartmentBLL.GetDepartments();
+                dataGridDepartment.DataSource = list;
+            }
+        }
     }
 }

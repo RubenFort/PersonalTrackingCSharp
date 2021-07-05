@@ -26,6 +26,34 @@ namespace DAL.DAO
             }
         }
 
+        public static void DeleteDepartment(int ID)
+        {
+            /*
+			   use [PERSONALTRACKING]
+               go
+
+               create trigger delete_department on [dbo].[DEPARTMENT]
+               after delete as
+               BEGIN
+               declare @id int
+               select @id = ID from deleted
+			   delete from EMPLOYEE Where ID = @id
+			   delete from POSITION Where ID = @id
+               END
+            */
+
+            try
+            {
+                DEPARTMENT department = db.DEPARTMENT.First(x => x.ID == ID);
+                db.DEPARTMENT.DeleteOnSubmit(department);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static void UpdateDepartment(DEPARTMENT department)
         {
             try
