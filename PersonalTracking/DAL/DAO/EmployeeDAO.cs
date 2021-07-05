@@ -121,6 +121,25 @@ namespace DAL.DAO
 
         public static void UpdateEmployee(int employeeID, int amount)
         {
+            /*Codigo creación trigger en SqlServer
+                USE[PERSONALTRACKING]
+                GO
+
+                create trigger delete_employee ON[dbo].[EMPLOYEE]
+
+                    after delete as
+                    BEGIN
+
+                    declare @id int
+                    select @id = ID from deleted
+                    delete from TASK Where EmployeeID = @id
+
+                    delete from SALARY Where EmployeeID = @id
+
+                    delete from PERMISSION Where EmployeeID = @id
+
+                    END
+             */
             try
             {
                 EMPLOYEE employee = db.EMPLOYEE.First(x => x.ID == employeeID);
