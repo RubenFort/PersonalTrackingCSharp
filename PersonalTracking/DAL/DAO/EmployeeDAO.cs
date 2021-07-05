@@ -142,8 +142,8 @@ namespace DAL.DAO
              */
             try
             {
-                EMPLOYEE employee = db.EMPLOYEE.First(x => x.ID == employeeID);
-                employee.Salary = amount;
+                EMPLOYEE emp = db.EMPLOYEE.First(x => x.ID == employeeID);
+                db.EMPLOYEE.DeleteOnSubmit(emp);
                 db.SubmitChanges();
             }
             catch (Exception ex)

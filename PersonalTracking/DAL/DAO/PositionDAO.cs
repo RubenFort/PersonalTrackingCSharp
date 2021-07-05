@@ -18,7 +18,6 @@ namespace DAL.DAO
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -50,8 +49,34 @@ namespace DAL.DAO
             }
             catch (Exception)
             {
-
                 throw;
+            }
+        }
+
+        public static void DeletePosition(int ID)
+        {
+            /*
+               use [PERSONALTRACKING]
+                go
+
+                create trigger delete_position on [dbo].[POSITION]
+                after delete as
+                BEGIN
+                declare @id int
+                select @id = ID from deleted
+                delete from EMPLOYEE Where PositionID = @id
+                END
+             */
+
+            try
+            {
+                POSITION position = db.POSITION.First(x => x.ID == ID);
+                db.POSITION.DeleteOnSubmit(position);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
