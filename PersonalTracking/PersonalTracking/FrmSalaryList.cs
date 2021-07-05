@@ -191,5 +191,17 @@ namespace PersonalTracking
             detail.monthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
             detail.monthName = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delere this Salary", "Warning", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                SalaryBLL.DeleteSalary(detail.salaryID);
+                MessageBox.Show("Salary was deleted");
+                FillAllData();
+                clenFilter();
+            }
+        }
     }
 }
