@@ -80,7 +80,7 @@ namespace DAL.DAO
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Salary was not deleted");
             }
         }
 

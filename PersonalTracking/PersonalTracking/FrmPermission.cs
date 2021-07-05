@@ -81,6 +81,7 @@ namespace PersonalTracking
                     dpEnd.Value = DateTime.Today;
                     txtDayAmount.Clear();
                     txtExplanation.Clear();
+                    this.Close();
                 }
                 else if (isUpdate)
                 {
