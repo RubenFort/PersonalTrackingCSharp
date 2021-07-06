@@ -47,6 +47,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.btnExportExcell = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExportExcell);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.cmbPosition);
@@ -255,6 +257,17 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // btnExportExcell
+            // 
+            this.btnExportExcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcell.Location = new System.Drawing.Point(419, 112);
+            this.btnExportExcell.Name = "btnExportExcell";
+            this.btnExportExcell.Size = new System.Drawing.Size(174, 40);
+            this.btnExportExcell.TabIndex = 16;
+            this.btnExportExcell.Text = "Export to Excell";
+            this.btnExportExcell.UseVisualStyleBackColor = true;
+            this.btnExportExcell.Click += new System.EventHandler(this.btnExportExcell_Click);
+            // 
             // FrmEmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +309,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnExportExcell;
     }
 }

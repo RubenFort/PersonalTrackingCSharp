@@ -27,3 +27,5 @@ C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTrack
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmSalaryList.resources
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmTask.resources
 C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\bin\Debug\DAL.dll.config
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\Crowley\source\repos\PersonalTrackingDAO\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.csproj.ResolveComReference.cache
