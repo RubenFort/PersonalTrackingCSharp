@@ -63,6 +63,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExportExcell = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -356,6 +357,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnExportExcell);
             this.panel2.Controls.Add(this.btnDisapprove);
             this.panel2.Controls.Add(this.btnApprove);
             this.panel2.Controls.Add(this.btnClose);
@@ -371,7 +373,7 @@
             // btnDisapprove
             // 
             this.btnDisapprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisapprove.Location = new System.Drawing.Point(196, 78);
+            this.btnDisapprove.Location = new System.Drawing.Point(91, 79);
             this.btnDisapprove.Name = "btnDisapprove";
             this.btnDisapprove.Size = new System.Drawing.Size(120, 40);
             this.btnDisapprove.TabIndex = 1;
@@ -382,7 +384,7 @@
             // btnApprove
             // 
             this.btnApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApprove.Location = new System.Drawing.Point(196, 18);
+            this.btnApprove.Location = new System.Drawing.Point(91, 19);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(120, 40);
             this.btnApprove.TabIndex = 0;
@@ -393,7 +395,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(826, 44);
+            this.btnClose.Location = new System.Drawing.Point(721, 45);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(120, 40);
             this.btnClose.TabIndex = 5;
@@ -404,7 +406,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(518, 44);
+            this.btnUpdate.Location = new System.Drawing.Point(413, 45);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(120, 40);
             this.btnUpdate.TabIndex = 3;
@@ -415,7 +417,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(676, 44);
+            this.btnDelete.Location = new System.Drawing.Point(571, 45);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 40);
             this.btnDelete.TabIndex = 4;
@@ -426,7 +428,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(365, 44);
+            this.btnNew.Location = new System.Drawing.Point(260, 45);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(120, 40);
             this.btnNew.TabIndex = 2;
@@ -445,6 +447,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(1140, 301);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            // 
+            // btnExportExcell
+            // 
+            this.btnExportExcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcell.Location = new System.Drawing.Point(870, 45);
+            this.btnExportExcell.Name = "btnExportExcell";
+            this.btnExportExcell.Size = new System.Drawing.Size(174, 40);
+            this.btnExportExcell.TabIndex = 40;
+            this.btnExportExcell.Text = "Export to Excell";
+            this.btnExportExcell.UseVisualStyleBackColor = true;
+            this.btnExportExcell.Click += new System.EventHandler(this.btnExportExcell_Click);
             // 
             // FrmPermissionList
             // 
@@ -508,5 +521,6 @@
         private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.ComboBox cmbState;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button btnExportExcell;
     }
 }

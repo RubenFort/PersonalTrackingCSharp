@@ -60,6 +60,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExportExcell = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnExportExcell);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.cmbTaskState);
@@ -412,6 +414,17 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
+            // btnExportExcell
+            // 
+            this.btnExportExcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcell.Location = new System.Drawing.Point(93, 166);
+            this.btnExportExcell.Name = "btnExportExcell";
+            this.btnExportExcell.Size = new System.Drawing.Size(174, 40);
+            this.btnExportExcell.TabIndex = 17;
+            this.btnExportExcell.Text = "Export to Excell";
+            this.btnExportExcell.UseVisualStyleBackColor = true;
+            this.btnExportExcell.Click += new System.EventHandler(this.btnExportExcell_Click);
+            // 
             // FrmTaskList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,5 +484,6 @@
         private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnExportExcell;
     }
 }

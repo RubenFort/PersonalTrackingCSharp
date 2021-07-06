@@ -203,5 +203,10 @@ namespace PersonalTracking
                 clenFilter();
             }
         }
+
+        private void btnExportExcell_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExcelExport(dataGridView1);
+        }
     }
 }
